@@ -1,0 +1,25 @@
+[gd_scene load_steps=4 format=3 uid="uid://cveklqgqyagkk"]
+
+[ext_resource type="PackedScene" uid="uid://ct153yfllniau" path="res://MainCharacterplace/player.tscn" id="1_4clcr"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_xii8n"]
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_7xaui"]
+data = PackedVector3Array(-0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, -0.5)
+
+[node name="Node3D" type="Node3D"]
+
+[node name="Player" parent="." instance=ExtResource("1_4clcr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.260253, 0.562719, -1.24333)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -0.128726, 0.99168, 0, -0.99168, -0.128726, 0, 0.659334, 0)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(31.0106, 0, 0, 0, 0.915855, 0, 0, 0, 31.2091, 0, 0.196568, 0)
+mesh = SubResource("BoxMesh_xii8n")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_7xaui")
