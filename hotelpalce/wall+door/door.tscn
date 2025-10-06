@@ -1,0 +1,231 @@
+[gd_scene load_steps=24 format=4 uid="uid://ca4s2nuf2un7p"]
+
+[ext_resource type="Texture2D" uid="uid://cawwpugkn3l7q" path="res://hotelpalce/wall+door/门和墙壁_0.jpg" id="1_ynmig"]
+[ext_resource type="Texture2D" uid="uid://cg73ahq5f544m" path="res://hotelpalce/wall+door/门和墙壁_1.jpg" id="2_okhud"]
+[ext_resource type="Texture2D" uid="uid://dpppx8npme7od" path="res://hotelpalce/wall+door/门和墙壁_2.jpg" id="3_2u28r"]
+[ext_resource type="Texture2D" uid="uid://b5fvlpo4bskxb" path="res://hotelpalce/wall+door/门和墙壁_3.jpg" id="4_5tj1g"]
+[ext_resource type="Texture2D" uid="uid://b3em2ssavwxgi" path="res://hotelpalce/wall+door/门和墙壁_4.jpg" id="5_0ltus"]
+[ext_resource type="Texture2D" uid="uid://c4dvaexspv0ay" path="res://hotelpalce/wall+door/门和墙壁_5.jpg" id="6_1wye2"]
+[ext_resource type="Texture2D" uid="uid://cbxcpss1iusix" path="res://hotelpalce/wall+door/门和墙壁_6.jpg" id="7_xt40v"]
+[ext_resource type="Texture2D" uid="uid://t4q1qtovlsd" path="res://hotelpalce/wall+door/门和墙壁_7.jpg" id="8_mf4n3"]
+[ext_resource type="Texture2D" uid="uid://corcy1bjddibn" path="res://hotelpalce/wall+door/门和墙壁_8.jpg" id="9_i0o0a"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ndpq4"]
+resource_name = "材质.1"
+metallic = 1.0
+emission_enabled = true
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_ykgwx"]
+_surfaces = [{
+"aabb": AABB(-0.6424633, -0.004284167, 0.27128798, 1.2849267, 1.6282533, 0.060000002),
+"format": 34896613377,
+"index_count": 78,
+"index_data": PackedByteArray("AAABAAIAAgABAAMABAAAAAIAAwABAAUAAgAGAAQABQAHAAMAAwAHAAgABQABAAkABQAJAAQABAAJAAoACgAAAAQAAQALAAkACAAHAAwAAAAMAAEADAALAAEADAAGAAgADAAHAAsABwANAAsABAAGAA0ACwANAA4ADwAMAAAADwAGAAwABgAPAA0ADQAPAA4ACgAPAAAADgAPAAoA"),
+"name": "材质.1",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 16,
+"vertex_data": PackedByteArray("SQ6Q9wAAAAC18ZD3AAAAAAAA//8AAAAA/////wAAAAAAAAAAAAAAAP//AAAAAAAAAAD/////AAD//wAA//8AAP///////wAAtfEEAAAAAABJDgQAAAAAALXxBAD//wAAtfGQ9///AAAAAAAA//8AAEkOBAD//wAASQ6Q9///AAA=")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_6ulrb"]
+resource_name = "门和墙壁_走廊框"
+_surfaces = [{
+"aabb": AABB(-0.6424633, -0.004284167, 0.27128798, 1.2849267, 1.6282533, 0.060000002),
+"attribute_data": PackedByteArray("ZguGCODAhggAAAAARswAAAAA//9GzP//Zgu8/+DAvP9GzP//AAD//+DAvP9mC7z/4MCGCGYLhghGzAAAAAAAAC82AAAAAAAALzb//wAA///OuP//zrgAAP///////wAA/38AAC82AAD/f///Lzb//844///OOAAA/3////9/AAD//wAALrYAAP////8utv//"),
+"format": 34896613399,
+"index_count": 78,
+"index_data": PackedByteArray("AAABAAIAAgABAAMABAAAAAIAAwABAAUABgAAAAQABQABAAcABAAHAAYABQAHAAQACAAJAAoACgAJAAsADAAIAAoACQANAAsADgAIAAwADwANAAkADAAPAA4ADQAPAAwAEAARABIAEgARABMAFAAVABYAFgAVABcAGAAZABoAGgAZABsAHAAdAB4AHgAdAB8AIAAhACIAIgAhACMA"),
+"material": SubResource("StandardMaterial3D_ndpq4"),
+"name": "材质.1",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 36,
+"vertex_data": PackedByteArray("SQ6Q9wAAAAC18ZD3AAAAAAAA//8AAAAA/////wAAAAAAAAAAAAAAAP//AAAAAAAASQ4EAAAAAAC18QQAAAAAAP//AAD//9eAAAAAAP//14C18QQA//9KgEkOBAD//0qAtfGQ9///JYBJDpD3//8lgP///////zKAAAD/////MoBJDpD3//8AALXxkPf//wAASQ6Q9wAAAAC18ZD3AAAAAP//AAAAAFTV//8AAP//VNX/////AABU1f///////1TVSQ4EAP//qipJDpD3//+qKkkOBAAAAKoqSQ6Q9wAAqioAAP//AABU1QAA/////1TVAAAAAAAAVNUAAAAA//9U1bXxkPf//6oqtfEEAP//qiq18ZD3AACqKrXxBAAAAKoqw/86gMP/xH+u/1CArv+uf67+r36u/k+Bif+Jf4n/dYD//////3//f///////f/9//3//f///////f/9///////9//z//f/8//3//P/9//z+qKqoqqiqqKqoqqiqqKqoqqqpUVaqqVFWqqlRVqqpUVVRVqqpUVaqqVFWqqlRVqqpU1VTVVNVU1VTVVNVU1VTV")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_ykgwx")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_554r7"]
+resource_name = "Wooden_Planks_wczjegqs"
+albedo_color = Color(0.9063318, 0.9063318, 0.9063318, 1)
+albedo_texture = ExtResource("1_ynmig")
+metallic = 1.0
+metallic_texture = ExtResource("2_okhud")
+metallic_texture_channel = 2
+roughness_texture = ExtResource("2_okhud")
+roughness_texture_channel = 1
+emission_enabled = true
+emission = Color(0.46666667, 0.23921569, 0.24705882, 1)
+emission_energy_multiplier = 0.0
+normal_enabled = true
+normal_scale = -7.02
+normal_texture = ExtResource("3_2u28r")
+texture_filter = 1
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_6rrk7"]
+_surfaces = [{
+"aabb": AABB(-0.6, -0.81, -0.25142643, 1.2, 1.62, 0.50285286),
+"format": 34359742465,
+"index_count": 60,
+"index_data": PackedByteArray("AAABAAIAAAADAAEABAADAAAAAgABAAUABAAGAAMABgABAAMABQABAAYABwAGAAQAAgAFAAgABwAJAAYACgAJAAcACQALAAYABgALAAwABgAMAAUABQAMAA0ACgAOAAkACAAOAAoACAAFAA4ABQANAA4ADgANAA8A"),
+"name": "Wooden_Planks_wczjegqs",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 16,
+"vertex_data": PackedByteArray("mpkZvylcTz/3uoA+mpkZvylcTz/3uoC+mpkZv2ZmBj/3uoA+mpkZPylcTz/3uoC+mpkZPylcTz/3uoA+mpkZv2ZmBj/3uoC+mpkZP2ZmBj/3uoC+mpkZP2ZmBj/3uoA+mpkZvylcT7/3uoA+mpkZPylcT7/3uoC+mpkZPylcT7/3uoA+CX2dPrhlQ7/3uoC+CX2dPpXY/z73uoC+CX2dvpXY/z73uoC+mpkZvylcT7/3uoC+CX2dvrhlQ7/3uoC+")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_ul53h"]
+resource_name = "门和墙壁_凹墙-Wooden_Planks_wczjegqs"
+_surfaces = [{
+"aabb": AABB(-0.6, -0.81, -0.25142643, 1.2, 1.62, 0.50285286),
+"attribute_data": PackedByteArray("qOoMPwAAAACo6gw/AAAAAKjqDD/sJTQ+qOoMP+wlND6o6gw/AACAP6jqDD8AAIA/sirmPuwlND6yKuY+7CU0PrIq5j4AAAAAsirmPgAAAACyKuY+AACAP7Iq5j4AAIA/sirmPgAAAACyKuY+AAAAAKjqDD8AAAAAqOoMPwAAAACo6gw/7CU0Pg7BCz8OSFY+qOoMPwAAgD8OwQs/eHd3P+R96D4OSFY+sirmPuwlND7kfeg+eHd3P7Iq5j4AAIA/qOoMPwAAAACyKuY+AAAAAKjqDD8AAIA/qOoMPwAAgD+yKuY+AACAP7Iq5j4AAIA/"),
+"format": 34359742487,
+"index_count": 60,
+"index_data": PackedByteArray("AAABAAIAAgABAAMAAgADAAQABAADAAUABgAHAAgACAAHAAkABgAKAAcACwAKAAYADAANAA4ADgANAA8AEAARABIAEgARABMAEAAUABEAFQAUABAAFQAWABQAFwAWABUAEAAYABUAFQAYABkAGgAbABwAHAAbAB0A"),
+"material": SubResource("StandardMaterial3D_554r7"),
+"name": "Wooden_Planks_wczjegqs",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 30,
+"vertex_data": PackedByteArray("mpkZvylcTz/3uoA+mpkZvylcTz/3uoC+mpkZv2ZmBj/3uoA+mpkZv2ZmBj/3uoC+mpkZvylcT7/3uoA+mpkZvylcT7/3uoC+mpkZP2ZmBj/3uoA+mpkZP2ZmBj/3uoC+mpkZPylcTz/3uoA+mpkZPylcTz/3uoC+mpkZPylcT7/3uoC+mpkZPylcT7/3uoA+mpkZPylcTz/3uoA+mpkZPylcTz/3uoC+mpkZvylcTz/3uoA+mpkZvylcTz/3uoC+mpkZv2ZmBj/3uoC+CX2dvpXY/z73uoC+mpkZvylcT7/3uoC+CX2dvrhlQ7/3uoC+CX2dPpXY/z73uoC+mpkZP2ZmBj/3uoC+CX2dPrhlQ7/3uoC+mpkZPylcT7/3uoC+mpkZvylcTz/3uoC+mpkZPylcTz/3uoC+mpkZvylcT7/3uoA+mpkZvylcT7/3uoC+mpkZPylcT7/3uoA+mpkZPylcT7/3uoC+////f////7////9/////v////3////+/////f////7////9/////v////3////+/AAD/f////78AAP9/////vwAA/3////+/AAD/f////78AAP9/////vwAA/3////+//38AAP///7//fwAA////v/9/AAD///+//38AAP///7//f/9/qAXUQv9//3+JA8RB/3//f1ABVz//f/9/wwMePv9//397BME9/3//f+IEjj3/f/9/DwGHQP9//38bA41B/3//fwAA/z//f/9/AAD/P/9///////+//3///////7//f///////v/9///////+/")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_6rrk7")
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_okhud"]
+data = PackedVector3Array(-0.59999996, 0.81, 0.2514, -0.59999996, 0.81, -0.2514, -0.59999996, 0.525, 0.2514, -0.59999996, 0.525, 0.2514, -0.59999996, 0.81, -0.2514, -0.59999996, 0.525, -0.2514, -0.59999996, 0.525, 0.2514, -0.59999996, 0.525, -0.2514, -0.59999996, -0.81, 0.2514, -0.59999996, -0.81, 0.2514, -0.59999996, 0.525, -0.2514, -0.59999996, -0.81, -0.2514, 0.59999996, 0.525, 0.2514, 0.59999996, 0.525, -0.2514, 0.59999996, 0.81, 0.2514, 0.59999996, 0.81, 0.2514, 0.59999996, 0.525, -0.2514, 0.59999996, 0.81, -0.2514, 0.59999996, 0.525, 0.2514, 0.59999996, -0.81, -0.2514, 0.59999996, 0.525, -0.2514, 0.59999996, -0.81, 0.2514, 0.59999996, -0.81, -0.2514, 0.59999996, 0.525, 0.2514, 0.59999996, 0.81, 0.2514, 0.59999996, 0.81, -0.2514, -0.59999996, 0.81, 0.2514, -0.59999996, 0.81, 0.2514, 0.59999996, 0.81, -0.2514, -0.59999996, 0.81, -0.2514, -0.59999996, 0.525, -0.2514, -0.3076, 0.49969998, -0.2514, -0.59999996, -0.81, -0.2514, -0.59999996, -0.81, -0.2514, -0.3076, 0.49969998, -0.2514, -0.3076, -0.7633, -0.2514, -0.59999996, 0.525, -0.2514, 0.3076, 0.49969998, -0.2514, -0.3076, 0.49969998, -0.2514, 0.59999996, 0.525, -0.2514, 0.3076, 0.49969998, -0.2514, -0.59999996, 0.525, -0.2514, 0.59999996, 0.525, -0.2514, 0.3076, -0.7633, -0.2514, 0.3076, 0.49969998, -0.2514, 0.59999996, -0.81, -0.2514, 0.3076, -0.7633, -0.2514, 0.59999996, 0.525, -0.2514, -0.59999996, 0.525, -0.2514, -0.59999996, 0.81, -0.2514, 0.59999996, 0.525, -0.2514, 0.59999996, 0.525, -0.2514, -0.59999996, 0.81, -0.2514, 0.59999996, 0.81, -0.2514, -0.59999996, -0.81, 0.2514, -0.59999996, -0.81, -0.2514, 0.59999996, -0.81, 0.2514, 0.59999996, -0.81, 0.2514, -0.59999996, -0.81, -0.2514, 0.59999996, -0.81, -0.2514)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xkv3x"]
+resource_name = "Plywood_vdcjecc"
+albedo_color = Color(0.9063318, 0.9063318, 0.9063318, 1)
+albedo_texture = ExtResource("4_5tj1g")
+metallic = 1.0
+metallic_texture = ExtResource("5_0ltus")
+metallic_texture_channel = 2
+roughness_texture = ExtResource("5_0ltus")
+roughness_texture_channel = 1
+emission_enabled = true
+normal_enabled = true
+normal_texture = ExtResource("6_1wye2")
+texture_filter = 1
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_5nvhk"]
+_surfaces = [{
+"aabb": AABB(-0.6, -0.81, -0.25142643, 1.2, 0.046729147, 1e-05),
+"format": 34896613377,
+"index_count": 6,
+"index_data": PackedByteArray("AAABAAIAAgABAAMA"),
+"name": "Plywood_vdcjecc",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 4,
+"vertex_data": PackedByteArray("AAAAAAAAAABgPv//AAAAAP//AAAAAAAAnsH//wAAAAA=")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_ie310"]
+resource_name = "门和墙壁_凹墙-Plywood_vdcjecc"
+_surfaces = [{
+"aabb": AABB(-0.6, -0.81, -0.25142643, 1.2, 0.046729147, 1e-05),
+"attribute_data": PackedByteArray("//////D+uvuH6P//lum6+w=="),
+"format": 34896613399,
+"index_count": 6,
+"index_data": PackedByteArray("AAABAAIAAgABAAMA"),
+"material": SubResource("StandardMaterial3D_xkv3x"),
+"name": "Plywood_vdcjecc",
+"primitive": 3,
+"uv_scale": Vector4(3.4403474, 0.25062656, 0, 0),
+"vertex_count": 4,
+"vertex_data": PackedByteArray("AAAAAAAAAABgPv//AAAAAP//AAAAAAAAnsH//wAAAAD/f/9//3//f/9//3//f/9/")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_5nvhk")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ft4j2"]
+resource_name = "Framed_Wallpaper_ufsnadydy"
+albedo_color = Color(0.9063318, 0.9063318, 0.9063318, 1)
+albedo_texture = ExtResource("7_xt40v")
+metallic = 0.45
+metallic_specular = 1.0
+metallic_texture = ExtResource("8_mf4n3")
+metallic_texture_channel = 2
+roughness = 0.79
+roughness_texture = ExtResource("8_mf4n3")
+roughness_texture_channel = 1
+emission_enabled = true
+emission = Color(0.0885599, 0.0885599, 0.0885599, 1)
+emission_energy_multiplier = 0.02
+normal_enabled = true
+normal_scale = -7.99
+normal_texture = ExtResource("9_i0o0a")
+texture_filter = 1
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_hcjtg"]
+_surfaces = [{
+"aabb": AABB(-2.372915, -0.81, 0.25142643, 4.74583, 1.62, 1e-05),
+"format": 34896613377,
+"index_count": 24,
+"index_data": PackedByteArray("AAABAAIAAgABAAMAAQAEAAMABQAEAAEABgAHAAgACAAHAAkABwAKAAkACwAKAAcA"),
+"name": "Framed_Wallpaper_ufsnadydy",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 12,
+"vertex_data": PackedByteArray("AAAAAAAAAAAAAPXSAAAAAKJfAAAAAAAAol/10gAAAACiX///AAAAAAAA//8AAAAAXKAAAAAAAABcoPXSAAAAAP//AAAAAAAA///10gAAAAD/////AAAAAFyg//8AAAAA")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_41iuc"]
+resource_name = "门和墙壁_凹墙-Framed_Wallpaper_ufsnadydy"
+_surfaces = [{
+"aabb": AABB(-2.372915, -0.81, 0.25142643, 4.74583, 1.62, 1e-05),
+"attribute_data": PackedByteArray("AAD//wAAXZTDL///wy9dlMMvYn0AAGJ9F1D//xdQXZTaf///2n9dlNp/Yn0XUGJ9"),
+"format": 34896613399,
+"index_count": 24,
+"index_data": PackedByteArray("AAABAAIAAgABAAMAAQAEAAMABQAEAAEABgAHAAgACAAHAAkABwAKAAkACwAKAAcA"),
+"material": SubResource("StandardMaterial3D_ft4j2"),
+"name": "Framed_Wallpaper_ufsnadydy",
+"primitive": 3,
+"uv_scale": Vector4(15.981777, 2.0206184, 0, 0),
+"vertex_count": 12,
+"vertex_data": PackedByteArray("AAAAAAAAAIAAAPXSAAAAgKJfAAAAAACAol/10gAAAICiX///AAAAgAAA//8AAACAXKAAAAAAAIBcoPXSAAAAgP//AAAAAACA///10gAAAID/////AAAAgFyg//8AAACA/3////9/////f////3////9/////f////3////9/////f////3////9/////f///")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_hcjtg")
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_ynmig"]
+data = PackedVector3Array(-2.3729, -0.81, 0.2514, -2.3729, 0.525, 0.2514, -0.59999996, -0.81, 0.2514, -0.59999996, -0.81, 0.2514, -2.3729, 0.525, 0.2514, -0.59999996, 0.525, 0.2514, -2.3729, 0.525, 0.2514, -0.59999996, 0.81, 0.2514, -0.59999996, 0.525, 0.2514, -2.3729, 0.81, 0.2514, -0.59999996, 0.81, 0.2514, -2.3729, 0.525, 0.2514, 0.5999, -0.81, 0.2514, 0.5999, 0.525, 0.2514, 2.3729, -0.81, 0.2514, 2.3729, -0.81, 0.2514, 0.5999, 0.525, 0.2514, 2.3729, 0.525, 0.2514, 0.5999, 0.525, 0.2514, 2.3729, 0.81, 0.2514, 2.3729, 0.525, 0.2514, 0.5999, 0.81, 0.2514, 2.3729, 0.81, 0.2514, 0.5999, 0.525, 0.2514)
+
+[node name="Door" type="Node3D"]
+
+[node name="走廊框" type="MeshInstance3D" parent="."]
+mesh = SubResource("ArrayMesh_6ulrb")
+skeleton = NodePath("")
+
+[node name="凹墙" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.004055364, 0.825, 0.059720445)
+
+[node name="凹墙-Wooden_Planks_wczjegqs" type="MeshInstance3D" parent="凹墙"]
+mesh = SubResource("ArrayMesh_ul53h")
+skeleton = NodePath("")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="凹墙/凹墙-Wooden_Planks_wczjegqs"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="凹墙/凹墙-Wooden_Planks_wczjegqs/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_okhud")
+
+[node name="凹墙-Plywood_vdcjecc" type="MeshInstance3D" parent="凹墙"]
+mesh = SubResource("ArrayMesh_ie310")
+skeleton = NodePath("")
+
+[node name="凹墙-Framed_Wallpaper_ufsnadydy" type="MeshInstance3D" parent="凹墙"]
+mesh = SubResource("ArrayMesh_41iuc")
+skeleton = NodePath("")
+
+[node name="StaticBody3D2" type="StaticBody3D" parent="凹墙/凹墙-Framed_Wallpaper_ufsnadydy"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="凹墙/凹墙-Framed_Wallpaper_ufsnadydy/StaticBody3D2"]
+shape = SubResource("ConcavePolygonShape3D_ynmig")

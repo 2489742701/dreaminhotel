@@ -7,6 +7,7 @@ extends Control
 
 @onready var progress_bar: ProgressBar = $HBoxContainer/ProgressBar
 @onready var stamina_icon: TextureRect = $HBoxContainer/TextureRect
+
 var tween: Tween  # 用于实现动画效果
 var is_full: bool = true  # 新增状态标志
 
