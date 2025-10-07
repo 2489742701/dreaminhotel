@@ -1,21 +1,40 @@
-MIT License
+Copyright (C) 2024 梦在酒店 <thanksplay@yourmail.com>
 
-Copyright (c) 2024 Dream in Hotel
+This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU Affero General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
 
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU Affero General Public License for more details.
 
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
+You should have received a copy of the GNU Affero General Public License
+along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.
+Additional permission under GNU AGPL version 3 section 7:
+If you modify this Program, or any covered work, by linking or combining it
+with Godot Engine (provided by the Godot contributors under MIT license),
+the licensors of this Program grant you additional permission to convey the
+resulting work.
+
+---
+
+版权所有 (C) 2024 梦在酒店 <thanksplay@yourmail.com>
+
+本程序是自由软件：您可以自由地再分发和/或修改它，
+依据自由软件基金会发布的GNU Affero通用公共许可证的条款，
+无论是许可证的第3版，还是（您选择的）任何更高版本。
+
+发布本程序的目的是希望它能有用，
+但不附带任何保证；甚至没有对适销性或特定用途适用性的默认保证。
+详情请参见GNU Affero通用公共许可证。
+
+您应该已随本程序收到GNU Affero通用公共许可证的副本。
+如果没有，请参阅 <https://www.gnu.org/licenses/>。
+
+根据GNU AGPL第3版第7节的额外许可：
+如果您通过链接或组合方式修改本程序或任何受保护的作品，
+使其与Godot引擎（由Godot贡献者在MIT许可证下提供）结合，
+本程序的许可方授予您额外许可，允许您传播由此产生的作品。
