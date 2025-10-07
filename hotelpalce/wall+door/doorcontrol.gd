@@ -21,6 +21,7 @@ class_name DoorControl         # 全局可调用，类似 DoorControl.new()
 @onready var prompt   := $DoorMesh/Tips         # 靠近才显示的提示文字（Label3D）
 @onready var purpose  := $DoorMesh/LabelPurpose # 永久显示的房门用途（Label3D）
 @export_multiline var purpose_text := "档案室"   # 在 Inspector 里随时改门用途
+@export var purpose_color: Color = Color.WHITE     # 门牌字体颜色
 
 # ========== 运行变量 ==========
 var state: String = ""          # 当前门状态，与 start_state 同步
@@ -49,8 +50,9 @@ func _ready():
 	out_area.body_exited.connect(_on_area_exit)
 
 	# 提示文字默认隐藏；用途文字一次性设置后不再改动
-	prompt.modulate.a = 0.0
-	purpose.text = purpose_text
+	 prompt.modulate.a = 0.0
+	 purpose.text = purpose_text
+	 purpose.add_theme_color_override("font_color", purpose_color)  # 应用门牌字体颜色
 
 # ================================================================
 #  输入：纯手动按 E
