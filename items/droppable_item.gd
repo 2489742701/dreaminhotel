@@ -103,33 +103,36 @@ func _on_body_enter(body):
 	if always:
 		# 停止常驻粒子效果
 		always.emitting = false
-	if dead:
-		# 重启并开始发射拾取粒子效果
-		dead.restart()
-		dead.emitting = true
 	
 	# 物品拾取逻辑
 	if item_res:
-		# 获取玩家节点
-		var player = get_tree().get_first_node_in_group("player")
-		if player:
+		# 使用Global.player获取玩家
+		if Global.player:
 			# 获取玩家的背包节点
-			var inv = player.get_node("inventory")
-			# 将物品添加到背包
-			inv.add_item(item_res)
-			# 如果是钥匙类型物品且有有效ID，添加到钥匙集合
-			if item_res.kind == Item.Kind.KEY and item_res.key_id != -1:
-				inv.add_key(item_res.key_id)
-		# 注意：自动打开背包功能已被注释掉
-			#if player.has_method("toggle_inventory"):
-			#	player.toggle_inventory(true)
+			var inv = Global.player.get_node("inventory")
+			if inv:
+				# 将物品添加到背包 - add_item内部会自动处理钥匙
+				inv.add_item(item_res)
+	# 注意：自动打开背包功能已被注释掉
+	#if Global.player.has_method("toggle_inventory"):
+	#	Global.player.toggle_inventory(true)
 	
 	# 隐藏物品模型
 	mesh.hide()
-	# 等待粒子效果播放完毕后删除节点
-	await get_tree().create_timer(dead.lifetime if dead else 0.8).timeout
-	# 从场景树中移除并释放此节点
-	queue_free()
+	
+	# 处理拾取粒子效果并确保节点销毁
+	if dead:
+		# 断开可能存在的旧连接，避免多次连接
+		if dead.is_connected("finished", queue_free):
+			dead.disconnect("finished", queue_free)
+		# 重启并开始发射拾取粒子效果
+		dead.restart()
+		dead.emitting = true
+		# 连接finished信号到queue_free
+		dead.finished.connect(queue_free)
+	else:
+		# 如果没有粒子效果，直接删除节点
+		queue_free()
 
 # ========== 动画更新 ==========
 

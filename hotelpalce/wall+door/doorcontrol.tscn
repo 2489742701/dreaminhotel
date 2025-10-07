@@ -52,7 +52,6 @@ size = Vector3(0.60131836, 0.9864502, 1)
 [node name="Doorcontrol" type="Node3D"]
 transform = Transform3D(0.99999994, 0, 0, 0, 1, 0, 0, 0, 0.99999994, 0, 0, 0)
 script = ExtResource("1_ushvo")
-purpose_text = null
 
 [node name="DoorMesh" type="Node3D" parent="."]
 transform = Transform3D(0.99999994, 0, 0, 0, 1, 0, 0, 0, 0.99999994, 0, 0, 0)
@@ -84,7 +83,7 @@ visibility_range_end = 6.0
 visibility_range_end_margin = 3.0
 visibility_range_fade_mode = 1
 pixel_size = 0.001
-text = "房间名"
+text = "档案室"
 font_size = 52
 outline_size = 7
 

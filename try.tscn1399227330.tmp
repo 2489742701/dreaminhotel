@@ -50,12 +50,15 @@ transform = Transform3D(1, 0, 0, 0, 0.66094524, 0.75043416, 0, -0.75043416, 0.66
 [node name="Doorcontrol" parent="." instance=ExtResource("3_hxww5")]
 transform = Transform3D(0.99999994, 0, 0, 0, 1, 0, 0, 0, 0.99999994, -1.0266769, 0.7538224, -5.088773)
 key_id_needed = 0
-purpose_color = Color(0, 0, 0, 1)
+purpose_text = "档案室"
+purpose_color = null
 
 [node name="Doorcontrol2" parent="." instance=ExtResource("3_hxww5")]
 unique_name_in_owner = true
 transform = Transform3D(0.99999994, 0, 0, 0, 1, 0, 0, 0, 0.99999994, -4.269574, 0.7538224, -5.088773)
 start_state = "NEED_KEY"
+purpose_text = "档案室"
+purpose_color = null
 
 [node name="Key" parent="." instance=ExtResource("4_hkhtq")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.881157, 0.6544955, 2.5064704)

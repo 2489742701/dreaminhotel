@@ -58,6 +58,7 @@ emitting = false
 amount = 113
 lifetime = 1.38
 interp_to_end = 1.0
+one_shot = true
 explosiveness = 1.0
 visibility_aabb = AABB(-7.190929, -10.092868, -6.7043343, 13.921162, 15.575248, 13.71743)
 local_coords = true
