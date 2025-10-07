@@ -1,25 +1,31 @@
+# ==============================================================================
+# Item.gd  －－ 纯数据，不带逻辑
 @tool
-extends Resource
 class_name Item
+extends Resource
 
-# ========== 类型枚举 ==========
 enum Kind { KEY, WEAPON, QUEST, CONSUMABLE }
 
+# --------- 基础 ---------
 @export var kind: Kind = Kind.KEY
-@export var name: String = ""
-@export_multiline var desc: String = ""
-@export var can_equip: bool = true
-@export var key_id: int = -1        # 仅钥匙用；-1=无效
+@export var name_tr_key: String = ""        # 翻译键
+@export var desc_tr_key: String = ""
+@export var icon: Texture2D                 # 背包图标
+@export var mesh: Mesh                      # 3D 拾取模型
+@export var name_color: Color = Color.WHITE  # 物品名字颜色
 
-# ========== 纯 Mesh 资源（无世界场景） ==========
-@export var mesh: Mesh :            # 拖 .res 或内置圆柱/盒子即可
-	set(val):
-		mesh = val
-		emit_changed()              # 让 @tool 实时刷新预览
+# --------- 钥匙专用 ---------
+@export var key_id: int = -1
 
-@export var tint: Color = Color.WHITE  # 染色区分钥匙编号
+# --------- 消耗品专用 ---------
+@export var consumable_effect: ConsumableEffect  # 拖个资源即可
 
-# ========== 编辑器预览（@tool 可见） ==========
+# --------- 编辑器辅助 ---------
 func _get_preview_text() -> String:
-	# 在资源栏显示快速信息
-	return "%s  #%d" % [name, key_id] if kind == Kind.KEY else name
+	# 尝试获取翻译，如果没有Tr单例则使用原始键
+	var tr_name = ""
+	if Engine.has_singleton("Tr"):
+		tr_name = Engine.get_singleton("Tr").items(name_tr_key)
+	else:
+		tr_name = name_tr_key
+	return "%s  #%d" % [tr_name, key_id] if kind == Kind.KEY else tr_name

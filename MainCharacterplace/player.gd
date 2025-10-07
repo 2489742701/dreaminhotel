@@ -59,6 +59,17 @@ func _ready():
 	# 初始化体力值并更新UI
 	current_stamina = max_stamina
 	stamina_ui.update_stamina(current_stamina, max_stamina)
+
+# 恢复玩家体力的方法
+# 参数：percent - 要恢复的体力百分比（0-100）
+func restore_stamina_percent(percent: float):
+	# 计算恢复量
+	var recovery_amount = max_stamina * (clamp(percent, 0.0, 100.0) / 100.0)
+	# 更新体力值，确保不超过最大值
+	current_stamina = min(current_stamina + recovery_amount, max_stamina)
+	# 更新UI
+	if stamina_ui and stamina_ui.has_method("update_stamina"):
+		stamina_ui.update_stamina(current_stamina, max_stamina)
 	
 func _unhandled_input(event):
 	# ESC键切换鼠标捕获模式
@@ -70,8 +81,8 @@ func _unhandled_input(event):
 		# 如果背包打开，关闭背包
 		toggle_inventory(false)
 	
-	# interact键打开/关闭背包
-	if Input.is_action_just_pressed("interact"):
+	# openbag键打开/关闭背包
+	if Input.is_action_just_pressed("openbag"):
 		toggle_inventory()
 	
 	# 处理鼠标移动

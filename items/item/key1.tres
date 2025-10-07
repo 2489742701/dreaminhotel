@@ -6,7 +6,9 @@
 
 [resource]
 script = ExtResource("1_uath0")
-name = "key1"
-key_id = 1
+name_tr_key = "一把钥匙"
+desc_tr_key = "可以开门"
 mesh = SubResource("BoxMesh_uath0")
+name_color = Color(0.7711406, 0.80786234, 0.24441338, 1)
+key_id = 1
 metadata/_custom_type_script = "uid://dsb2k61cgp87f"

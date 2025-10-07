@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="Item" load_steps=3 format=3 uid="uid://someuniqueid"]
+
+[ext_resource type="Script" uid="uid://dsb2k61cgp87f" path="res://items/Item.gd" id="1"]
+
+[sub_resource type="CapsuleMesh" id="2"]
+height = 1.5
+
+[resource]
+script = ExtResource("1")
+kind = 3  # CONSUMABLE类型
+name_tr_key = "ITEM_NAME_HEALTH_POTION"
+desc_tr_key = "ITEM_DESC_HEALTH_POTION"
+mesh = SubResource("2")
+name_color = Color(1, 0.2, 0.2, 1)  # 红色名称

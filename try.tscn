@@ -6,7 +6,8 @@
 [ext_resource type="PackedScene" uid="uid://cgdn83jaw3o4b" path="res://hotelpalce/KeyPickup.tscn" id="4_hkhtq"]
 [ext_resource type="PackedScene" uid="uid://qj1ixgemsy44" path="res://items/InventoryGUI3D.tscn" id="5_pk75k"]
 [ext_resource type="PackedScene" uid="uid://dib8ni1ajjmcm" path="res://items/DroppableItem.tscn" id="6_gjy8r"]
-[ext_resource type="Resource" uid="uid://c5xdi0k4bjgfx" path="res://items/key1.tres" id="7_1hdyn"]
+[ext_resource type="Resource" uid="uid://c5xdi0k4bjgfx" path="res://items/item/key1.tres" id="7_1hdyn"]
+[ext_resource type="Resource" uid="uid://dy2yjwal0hpjs" path="res://items/item/drink.tres" id="8_1hdyn"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_xii8n"]
 
@@ -16,9 +17,6 @@ data = PackedVector3Array(-0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0
 [sub_resource type="Environment" id="Environment_cuwga"]
 ambient_light_source = 2
 ambient_light_energy = 16.0
-
-[sub_resource type="BoxMesh" id="BoxMesh_qw6my"]
-size = Vector3(0.2, 0.2, 0.2)
 
 [node name="Node3D" type="Node3D"]
 
@@ -61,7 +59,7 @@ start_state = "NEED_KEY"
 purpose_text = "档案室"
 
 [node name="Key" parent="." instance=ExtResource("4_hkhtq")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.3145564, 0.6544955, 2.5064704)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.881157, 0.6544955, 2.5064704)
 key_id = 1
 rotate_speed = 90.0
 bob_speed = 2.0
@@ -70,4 +68,10 @@ bob_height = 0.15
 [node name="DroppableItem" parent="." instance=ExtResource("6_gjy8r")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.4250655, 1.3399799, -0.049946576)
 item_res = ExtResource("7_1hdyn")
-mesh_resource = SubResource("BoxMesh_qw6my")
+mesh_resource = null
+
+[node name="DroppableItem2" parent="." instance=ExtResource("6_gjy8r")]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.402235, 1.3399799, 2.4249303)
+item_res = ExtResource("8_1hdyn")
+mesh_resource = null

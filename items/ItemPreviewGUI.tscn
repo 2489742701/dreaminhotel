@@ -3,13 +3,9 @@
 [ext_resource type="Script" uid="uid://b1ohi02tkba5r" path="res://items/item_preview_gui.gd" id="1_irytv"]
 
 [sub_resource type="Environment" id="Environment_irytv"]
-background_color = Color(0.99318033, 0.88524127, 0.9566665, 1)
-background_energy_multiplier = 16.0
-ambient_light_color = Color(0.89492244, 0.89492244, 0.8949224, 1)
-reflected_light_source = 1
+reflected_light_source = 2
 
-[sub_resource type="World3D" id="World3D_irytv"]
-resource_local_to_scene = true
+[sub_resource type="World3D" id="World3D_k8nqn"]
 environment = SubResource("Environment_irytv")
 
 [node name="Control" type="Control"]
@@ -50,7 +46,7 @@ stretch = true
 
 [node name="SubViewport" type="SubViewport" parent="SubViewportContainer"]
 own_world_3d = true
-world_3d = SubResource("World3D_irytv")
+world_3d = SubResource("World3D_k8nqn")
 transparent_bg = true
 handle_input_locally = false
 size = Vector2i(762, 473)
@@ -60,3 +56,9 @@ render_target_update_mode = 4
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2)
 
 [node name="PreviewRoot" type="Node3D" parent="SubViewportContainer/SubViewport"]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="SubViewportContainer/SubViewport"]
+transform = Transform3D(0.9595754, 0.21893911, -0.17686449, -0.050080985, 0.75119245, 0.6581807, 0.2769608, -0.62271655, 0.7317902, 0, 0, 0)
+light_energy = 1.5
+light_volumetric_fog_energy = 0.0
+light_specular = 0.0
