@@ -1,3 +1,12 @@
-KEY,en,zh_CN
-ITEM_NAME_RED_KEY,Red Key,红色钥匙
-ITEM_DESC_RED_KEY,Opens the red door.,可开启红色门。
+KEY,zh_CN,en
+动力饮料,动力饮料,Energy Drink
+恢复少量的体力,恢复少量的体力,Restores a small amount of stamina
+一把钥匙,一把钥匙,A key
+可以打开档案室,可以打开档案室,Can open the archive room
+PREFIX_CONSUMABLE,[消耗品],[Consumable]
+PREFIX_EQUIPPED,[装备中],[Equipped]
+PREFIX_EQUIPPABLE,[可装备],[Equippable]
+BUTTON_CANNOT_USE,无法使用,Cannot Use
+BUTTON_USE,使用,Use
+BUTTON_EQUIP,装备,Equip
+BUTTON_UNEQUIP,卸下,Unequip

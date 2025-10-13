@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="Item" load_steps=2 format=3 uid="uid://bg6ky3qyfcwfe"]
+
+[ext_resource type="Script" uid="uid://bbvoofg1yra28" path="res://scripts/items/Item.gd" id="1_5i6rl"]
+
+[resource]
+script = ExtResource("1_5i6rl")
+kind = 1
+name_tr_key = "手电筒"
+metadata/_custom_type_script = "uid://bbvoofg1yra28"

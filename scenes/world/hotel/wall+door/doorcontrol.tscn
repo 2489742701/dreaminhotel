@@ -1,0 +1,107 @@
+[gd_scene load_steps=9 format=4 uid="uid://dgkkivqmjks8o"]
+
+[ext_resource type="Script" path="res://scripts/world/doorcontrol.gd" id="1_ushvo"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_ushvo"]
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_j4q6d"]
+points = PackedVector3Array(0.3179378, 0.6354057, 0.029771425, -0.31746793, -0.6354057, -0.06953016, -0.31746793, -0.6354057, 0.029771425, -0.31746793, 0.6354057, -0.06953016, 0.3179378, -0.6354057, -0.06953016, 0.3179378, -0.6354057, 0.029771425, -0.31746793, 0.6354057, 0.029771425, 0.3179378, 0.6354057, -0.06953016)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ushvo"]
+size = Vector3(0.9217682, 1, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_j4q6d"]
+size = Vector3(0.98236084, 0.9864502, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_f5llm"]
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_df610"]
+_surfaces = [{
+"aabb": AABB(-0.3567344, -0.6739929, -0.04842826, 0.7134688, 1.3479857, 0.08979191),
+"format": 34896613377,
+"index_count": 144,
+"index_data": PackedByteArray("AAABAAIAAgABAAMAAAAEAAEAAgAFAAAABAAGAAEABwAEAAAABgAIAAEAAQAIAAMACQAGAAQAAAAFAAoAAAAKAAcABAAHAAsACwAJAAQABwAKAAwACwAHAA0ABwAMAA0ADQADAAsAAgADAA0AAwAOAAsADgAJAAsACAAOAAMADQAPAAIADQAMAA8AAgAPAAUADgAQAAkACAARAA4AEQAQAA4AEgARAAgABgASAAgACQATAAYAEwASAAYAEAATAAkAFAARABIADwAUAAUAFQAQABEAFQARABQAFQAUAA8ADAAVAA8AEgAWABQAFAAWAAUAEwAWABIABQAWAAoAFwATABAAFwAQABUAFgATABcAFwAVAAwAFgAXAAoACgAXAAwA"),
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 24,
+"vertex_data": PackedByteArray("AAD//wAAAACnEAH4AAAAAP////8AAAAAV+8B+AAAAACnEP0HAAAAAP////+Z3wAApxAB+JnfAAAAAAAAAAAAAFfvAfiZ3wAApxD9B5nfAAAAAP//md8AAFfv/QcAAAAAAAAAAJnfAAD//wAAAAAAAFfv/QeZ3wAA//8AAJnfAAC+DXQG//8AAEDydAb//wAAQPKK+f//AAC+DYr5//8AABb9df7//wAAFv2JAf//AADoAnX+//8AAOgCiQH//wAA")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_ol3va"]
+resource_name = "门_门框"
+_surfaces = [{
+"aabb": AABB(-0.3567344, -0.6739929, -0.04842826, 0.7134688, 1.3479857, 0.08979191),
+"attribute_data": PackedByteArray("AAAAANAI/Qd+hwAArn79B9AIAfh+h///AAD//65+AfiJAXX+RgeK+fSFdf6ufgH40AgB+DiAivmufv0Hrn4B+AAA//9+h///OIB0BgAAAAAAAP//iQGJAfSFiQF+h///focAAH6HAAAAAAAARgd0BtAIAfjQCP0H0Aj9B65+/Qf//wAAJ6oAAP////8nqv//J6oAAP9/AAAnqv///3////9/AAAnKgAA/3///ycq//8nKgAAAAAAACcq//8AAP//TKz//0ysAAD///////8AAP9/////fwAATKz//0ysAABMLP//TCwAAP9/////fwAAAAD//wAAAABMLP//TCwAAA=="),
+"format": 34896613399,
+"index_count": 144,
+"index_data": PackedByteArray("AAABAAIAAgABAAMAAAAEAAEAAgADAAUABgAEAAAABQADAAcABAAGAAcABwAGAAUACAAJAAoACwAJAAwADQAJAAsACgAJAA0ADgANAA8AEAAKABEACAAKABAAEgANAA4AEwAIABQAFQAIABMACgANABYAFgANABIACgAWABcAFwAWABgAEgAVABYAFgAVABkAGQAVABoAFQAbAAgAGwAVABIACAAbAAkACQAbABwAHAAbAB0AGwASAB4AHgASAB8AIAAhACIAIgAhACMAJAAlACYAJgAlACcAKAApACoAKgApACsALAAtAC4ALgAtAC8AMAAxADIAMgAxADMANAA1ADYANgA1ADcAOAA5ADoAOgA5ADsAPAA9AD4APgA9AD8A"),
+"material": SubResource("StandardMaterial3D_f5llm"),
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 64,
+"vertex_data": PackedByteArray("AAD//wAAAACnEAH4AAAAAP////8AAAAAV+8B+AAAAACnEP0HAAAAAP//AAAAAAAAAAAAAAAAAABX7/0HAAAAAOgCiQH///6Ovg10Bv//844W/YkB//+aj1fv/QeZ3w2vpxD9B5nftbdA8nQG///wjlfvAfiZ3w2vV+/9B5nftbcAAAAAmd9hs///AACZ32GzQPKK+f//844AAP//md9hswAAAACZ32Gz6AJ1/v//mo8W/XX+///+jv//AACZ32Gz/////5nfYbP/////md9hswAA//+Z32Gzvg2K+f//8I6nEP0Hmd8Nr6cQAfiZ37W3pxAB+JnfDa9X7wH4md+1t1fvAfiZ36szV+/9B5nfRi9X7wH4AACqKlfv/QcAAKoqV+/9B5nf8VCnEP0Hmd9JSFfv/QcAAP8/pxD9BwAA/z+nEP0Hmd+rM6cQAfiZ30YvpxD9BwAAqiqnEAH4AACqKqcQAfiZ3wAAV+8B+JnfAACnEAH4AAAAAFfvAfgAAAAA//8AAAAAVNX//wAAmd92zv////8AAFTV/////5nfds4AAAAAAAD/vwAAAACZ32Gz//8AAAAA/7///wAAmd9hswAA//8AAFTVAAD//5nfds4AAAAAAABU1QAAAACZ33bO/////wAA////////md///wAA//8AAP//AAD//5nf//////9/////f////3////9//v//f/7//3/+//9//v//fyVRENkS1kZSOz3VWf///3////9/jauL1f9//v//f///AAD/fwAA/3/sKbit/3/+//9//v/Dwimm2a7uJv9/AAD/fwAA////f////39xVHMq/38AAP9/AAAAAP9/AAD/f8nbydtV2FXYVNVU1VTVVNX///9/////f////3////9/NaTJW6inVliqqlRVqqpUVf9/gE3/f4dG/3//P/9//z+qKqoq+yX7Jaoqqir7JfslAAD/fwAA/38AAP9/AAD/f1RVqqoDWvulVFWqqgNa+6X/f/+//38Ctv9//7//fwK2")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_df610")
+
+[node name="Doorcontrol" type="Node3D"]
+transform = Transform3D(0.99999994, 0, 0, 0, 1, 0, 0, 0, 0.99999994, 0, 0, 0)
+script = ExtResource("1_ushvo")
+
+[node name="DoorMesh" type="Node3D" parent="."]
+transform = Transform3D(0.9999997, 0, 0, 0, 1, 0, 0, 0, 0.9999997, -0.008096183, 0.13613153, -0.020634113)
+
+[node name="门" type="MeshInstance3D" parent="DoorMesh"]
+transform = Transform3D(0.6242322, 0, 0, 0, 1.2499993, 0, 0, 0, 0.02708767, 0.29969898, 0.568796, -0.0022339057)
+mesh = SubResource("BoxMesh_ushvo")
+skeleton = NodePath("")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="DoorMesh/门"]
+transform = Transform3D(1.6160268, 0, 0, 0, 0.80000037, 0, 0, 0, 4.302176, 0, 0, 0.4367238)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="DoorMesh/门/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_j4q6d")
+
+[node name="Tips" type="Label3D" parent="DoorMesh"]
+transform = Transform3D(0.9999998, 0, 0.0005934119, 0, 1, 0, -0.0005934119, 0, 0.9999998, 0.47067037, 0.66730696, 0.03269422)
+gi_lightmap_texel_scale = 8.0
+gi_lightmap_scale = 3
+pixel_size = 0.002
+modulate = Color(0.9018896, 0.83278227, 0.6831861, 0)
+text = "文本自动"
+font_size = 30
+outline_size = 0
+language = "zh_CN"
+
+[node name="LabelPurpose" type="Label3D" parent="DoorMesh"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.285687, 1.057138, 0.0137804765)
+visibility_range_end = 6.0
+visibility_range_end_margin = 3.0
+visibility_range_fade_mode = 1
+pixel_size = 0.001
+text = "档案室"
+font_size = 52
+outline_size = 7
+
+[node name="inarea" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.2709701, 0.67190254, 0.5231162)
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="inarea"]
+shape = SubResource("BoxShape3D_ushvo")
+
+[node name="outarea" type="Area3D" parent="."]
+transform = Transform3D(0.99999994, 0, 0, 0, 1, 0, 0, 0, 0.99999994, 0.26702702, 0.68875206, -0.51702213)
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="outarea"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.014007568, -0.0067749023, 0)
+shape = SubResource("BoxShape3D_j4q6d")
+
+[node name="门框" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.27846014, 0.7049275, -0.01599598)
+mesh = SubResource("ArrayMesh_ol3va")
+skeleton = NodePath("")

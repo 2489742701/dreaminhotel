@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://cow51vbtt44m2"]
+
+[ext_resource type="PackedScene" uid="uid://dfk5ue2o7jqu3" path="res://MainCharacterAnimal/Jump.fbx" id="1_0a7ft"]
+
+[node name="Animation" type="Node3D"]
+
+[node name="Jump" parent="." instance=ExtResource("1_0a7ft")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00191669, 0, 0.0246999)
