@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://1yuw726rxru3"]
 
-[ext_resource type="Script" path="res://scripts/items/item_preview_gui.gd" id="1_irytv"]
+[ext_resource type="Script" uid="uid://cr7xbui808mdr" path="res://scripts/items/item_preview_gui.gd" id="1_irytv"]
 
 [sub_resource type="Environment" id="Environment_irytv"]
 reflected_light_source = 2
@@ -10,18 +10,64 @@ environment = SubResource("Environment_irytv")
 
 [node name="Control" type="Control"]
 layout_mode = 3
-anchors_preset = 0
-offset_right = 300.0
-offset_bottom = 636.0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 script = ExtResource("1_irytv")
+
+[node name="ItemListContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.014
+anchor_right = 0.294
+anchor_bottom = 1.0
+offset_left = 12.0
+offset_top = 1.9279995
+offset_right = -10.687988
+offset_bottom = -13.5
+grow_vertical = 2
+
+[node name="ItemListLabel" type="Label" parent="ItemListContainer"]
+layout_mode = 2
+text = "物品列表"
+horizontal_alignment = 1
+
+[node name="ItemScroll" type="ScrollContainer" parent="ItemListContainer"]
+custom_minimum_size = Vector2(280, 491.505)
+layout_mode = 2
+size_flags_horizontal = 4
+follow_focus = true
+
+[node name="ItemGrid" type="GridContainer" parent="ItemListContainer/ItemScroll"]
+layout_mode = 2
+size_flags_horizontal = 4
+columns = 3
+
+[node name="EquipmentContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.901
+anchor_right = 0.293
+anchor_bottom = 1.0
+offset_top = 0.15197754
+offset_right = -0.53601074
+grow_vertical = 0
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 clip_contents = true
-layout_mode = 0
-offset_left = 412.0
-offset_top = 543.0
-offset_right = 1044.0
-offset_bottom = 628.0
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.28800002
+anchor_top = 0.5
+anchor_right = 0.53000003
+anchor_bottom = 1.0
+offset_left = 0.2239685
+offset_top = -47.0
+offset_right = 64.43994
+grow_horizontal = 0
+grow_vertical = 0
 
 [node name="ItemNameLabel" type="Label" parent="VBoxContainer"]
 layout_mode = 2
@@ -36,12 +82,37 @@ text = "物品介绍内容将显示在这里"
 horizontal_alignment = 1
 autowrap_mode = 1
 
+[node name="DurabilityContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -789.0
+offset_bottom = 23.0
+grow_horizontal = 0
+
+[node name="RemainingLabel" type="Label" parent="DurabilityContainer"]
+layout_mode = 2
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="DurabilityBar" type="ProgressBar" parent="DurabilityContainer"]
+visible = false
+layout_mode = 2
+value = 50.0
+
 [node name="SubViewportContainer" type="SubViewportContainer" parent="."]
-layout_mode = 0
-offset_left = 318.0
-offset_top = 55.0
-offset_right = 1080.0
-offset_bottom = 528.0
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.34
+anchor_top = 0.064
+anchor_right = 1.0
+anchor_bottom = 0.883
+offset_left = 0.32000732
+offset_top = -27.472
+offset_bottom = 42.81598
+grow_horizontal = 0
+grow_vertical = 2
 stretch = true
 
 [node name="SubViewport" type="SubViewport" parent="SubViewportContainer"]
@@ -49,16 +120,18 @@ own_world_3d = true
 world_3d = SubResource("World3D_k8nqn")
 transparent_bg = true
 handle_input_locally = false
-size = Vector2i(762, 473)
+size = Vector2i(760, 601)
 render_target_update_mode = 4
 
 [node name="Camera3D" type="Camera3D" parent="SubViewportContainer/SubViewport"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.228571)
+
+[node name="SpotLight3D" type="SpotLight3D" parent="SubViewportContainer/SubViewport/Camera3D"]
+light_energy = 0.5
+light_indirect_energy = 4.6
+light_volumetric_fog_energy = 0.0
+light_specular = 0.7
+spot_range = 2.544
+spot_angle = 90.0
 
 [node name="PreviewRoot" type="Node3D" parent="SubViewportContainer/SubViewport"]
-
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="SubViewportContainer/SubViewport"]
-transform = Transform3D(0.9595754, 0.21893911, -0.17686449, -0.050080985, 0.75119245, 0.6581807, 0.2769608, -0.62271655, 0.7317902, 0, 0, 0)
-light_energy = 1.5
-light_volumetric_fog_energy = 0.0
-light_specular = 0.0

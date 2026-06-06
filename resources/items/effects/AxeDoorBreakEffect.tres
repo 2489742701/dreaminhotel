@@ -1,0 +1,6 @@
+[gd_resource type="Resource" script_class="AxeDoorBreakEffect" load_steps=2 format=3 uid="uid://bsbp06lu7tyaq"]
+
+[ext_resource type="Script" uid="uid://dhexkyaod1n1v" path="res://scripts/items/effects/AxeDoorBreakEffect.gd" id="1_axe_break"]
+
+[resource]
+script = ExtResource("1_axe_break")

@@ -9,6 +9,32 @@ extends Node
 # 定义类名为inventory，使其他脚本可以直接引用此类
 class_name inventory
 
+# ========== 事件信号系统 ==========
+
+# 物品被添加的信号
+signal item_added(item_index: int, item: Item)
+# 物品被移除的信号
+signal item_removed(item_index: int, item: Item)
+# 物品被使用的信号
+signal item_used(item_index: int, item: Item)
+# 装备状态改变的信号
+signal equipment_changed(equipped_item: Item, equipped_index: int)
+
+# ========== 拥有者玩家系统 ==========
+
+# 拥有此背包的玩家节点
+var owner_player: Node = null
+
+# 设置拥有者玩家
+# @param player: 玩家节点
+func set_owner_player(player: Node) -> void:
+	owner_player = player
+
+# 获取拥有者玩家
+# @return: 玩家节点
+func get_owner_player() -> Node:
+	return owner_player
+
 # ========== 钥匙管理系统 ==========
 
 # 存储玩家拥有的钥匙ID列表
@@ -49,39 +75,41 @@ var equipped_id: int = -1
 # 向背包添加物品
 # @param it: 要添加的物品对象，必须是Item类型
 # @param state: 物品状态对象，可选参数
-# 初学者提示：添加物品是游戏中最基础的交互之一
-func add_item(it: Item, state: RefCounted = null):
+# 优化：统一使用Dictionary类型，简化序列化和维护
+func add_item(it: Item, state: Dictionary = {}):
 	# 安全检查：确保物品不为空
-	# 永远不要信任传入的参数，始终进行安全检查
 	if it == null:
 		print("警告: 尝试添加空物品到背包")
 		return
 	
 	# 创建物品项字典
-	# 使用字典存储物品和它的状态信息
 	var item_entry = {}
 	item_entry.item = it
 	
-	# 如果没有提供状态，创建默认状态
-	if state == null:
-		# 尝试创建ItemState对象
-		# 这里使用了Engine.has_singleton来检查是否有ItemState单例
-		if Engine.has_singleton("ItemState"):
-			item_entry.state = Engine.get_singleton("ItemState").new()
-		else:
-			# 创建简单的状态字典作为备选
-			# 使用字典作为后备方案确保代码在任何情况下都能工作
-			item_entry.state = {"stack_count": 1}  # stack_count表示物品堆叠数量
+	# 标准化状态对象：统一使用Dictionary
+	if state.is_empty():
+		# 创建标准化的状态字典
+		item_entry.state = {
+			"stack_count": 1,  # 物品堆叠数量
+			"created_time": Time.get_unix_time_from_system()  # 添加时间戳便于管理
+		}
 	else:
+		# 确保提供的状态字典包含必要字段
+		if not "stack_count" in state:
+			state.stack_count = 1
+		if not "created_time" in state:
+			state.created_time = Time.get_unix_time_from_system()
 		item_entry.state = state
 	
 	items.append(item_entry)
-	# 输出调试信息
-	print("【背包】得到 ", it.name_tr_key)
+	print("【背包】得到 ", it.名称翻译键)
+	
+	# 发出物品添加信号
+	item_added.emit(items.size() - 1, it)
 	
 	# 自动处理钥匙类型物品
-	if it.kind == Item.Kind.KEY and it.key_id != -1:
-		add_key(it.key_id)
+	if it.物品类型 == Item.Kind.KEY and it.钥匙ID != -1:
+		add_key(it.钥匙ID)
 
 # 从背包移除物品
 # @param idx: 要移除的物品索引
@@ -92,12 +120,21 @@ func remove_item(idx: int):
 	if idx < 0 or idx >= items.size():
 		print("警告: 尝试移除无效的物品索引 ", idx)
 		return
+	
+	# 获取要移除的物品信息用于事件通知
+	var removed_item = items[idx].item if items[idx] and items[idx].has("item") else null
+	
 	# 如果要移除的是当前装备的物品，先卸下该物品
 	# 这是一个重要的处理，确保玩家不会继续持有已经移除的装备
 	if idx == equipped_id: 
 		unequip()
+	
 	# 从物品列表中移除指定索引的物品
 	items.remove_at(idx)
+	
+	# 发送物品移除事件
+	item_removed.emit(idx, removed_item)
+	
 	# 如果装备的物品索引大于移除的索引，需要调整
 	# 这是因为数组移除元素后，后面的元素会前移，所以索引需要更新
 	if equipped_id > idx:
@@ -124,11 +161,8 @@ func equip(idx: int):
 		print("警告: 尝试装备不存在的物品")
 		return
 	
-	# 检查物品是否可以装备（仅武器类型可装备）
-	# 在这个游戏中，只有WEAPON类型的物品可以被装备
-	if it.kind != Item.Kind.WEAPON:
-		print(it.name_tr_key, " 不可装备")
-		return
+	# 现在所有物品都可以装备，移除类型限制
+	# 允许所有类型的物品被装备
 	
 	# 先卸下当前装备的物品
 	# 确保玩家同一时间只能装备一件物品
@@ -137,19 +171,26 @@ func equip(idx: int):
 	equipped_id = idx
 	
 	# 输出调试信息
-	print("已装备 ", it.name_tr_key)
+	print("已装备 ", it.名称翻译键)
+	
+	# 发送装备状态改变事件
+	equipment_changed.emit(it, idx)
 
 # 卸下当前装备的物品
 # 初学者提示：这个方法重置装备状态，不依赖于任何参数
 func unequip():
-	# 如果当前有装备的物品且索引有效
-	# 先检查装备索引是否有效，再检查对应的物品是否存在
+	# 获取当前装备的物品信息用于事件通知
+	var unequipped_item = null
 	if equipped_id >= 0 and equipped_id < items.size() and items[equipped_id]:
+		unequipped_item = items[equipped_id].item
 		# 输出调试信息
-		print("卸下 ", items[equipped_id].item.name_tr_key)
+		print("卸下 ", unequipped_item.名称翻译键)
 	# 重置装备索引，表示没有装备任何物品
 	# 使用-1作为特殊值表示"未装备任何物品"
 	equipped_id = -1
+	
+	# 发送装备状态改变事件（卸下）
+	equipment_changed.emit(null, -1)
 
 # ========== 查询方法 ==========
 
@@ -185,41 +226,64 @@ func use_item(idx: int) -> void:
 	var state = entry.state
 	
 	# 检查物品类型是否为消耗品
-	if item.kind != Item.Kind.CONSUMABLE:
-		print("无法使用非消耗品物品: ", item.name_tr_key)
+	if item.物品类型 != Item.Kind.CONSUMABLE:
+		print("无法使用非消耗品物品: ", item.名称翻译键)
 		return
 	
 	# 获取消耗品效果
-	var effect: ConsumableEffect = item.consumable_effect
+	var effect: ConsumableEffect = item.消耗品效果
 	if effect:
-		# 应用效果到玩家
-		# Global.player是一个全局访问点，指向玩家节点
-		if Global.player:
+		# 应用效果到拥有者玩家
+		# 优先使用owner_player，如果没有则使用Global.player（向后兼容）
+		var target_player = owner_player if owner_player else Global.player
+		if target_player:
 			# 调用效果的apply方法，将玩家节点作为目标
-			effect.apply(Global.player)
-			print("使用了 ", item.name_tr_key)
+			effect.apply(target_player)
+			print("使用了 ", item.名称翻译键)
 			
-			# 减少物品数量 - 处理不同类型的状态对象
-			# 支持两种状态对象类型：RefCounted和Dictionary
-			if state is RefCounted and state.has_method("stack_count"):
-				# 如果状态是RefCounted对象且有stack_count方法
-				state.stack_count -= 1
-				# 如果数量减至0或更少，移除物品
-				if state.stack_count <= 0:
+			# 发送物品使用事件
+			item_used.emit(idx, item)
+			
+			# 处理分次饮用逻辑
+			if "可饮用次数" in item and item.可饮用次数 > 0:
+				# 如果物品支持分次饮用，减少饮用次数
+				item.可饮用次数 -= 1
+				print("使用了 ", item.名称翻译键, " 剩余饮用次数: ", item.可饮用次数)
+				
+				# 如果饮用次数为0或更少，移除物品
+				if item.可饮用次数 <= 0:
 					items.remove_at(idx)
-			elif state is Dictionary and "stack_count" in state:
-				# 如果状态是字典且包含stack_count键
-				state.stack_count -= 1
-				# 如果数量减至0或更少，移除物品
-				if state.stack_count <= 0:
-					items.remove_at(idx)
+					print("物品已喝完，从背包中移除")
+					# 发送物品移除事件
+					item_removed.emit(idx, item)
 			else:
-				# 如果没有找到数量属性，直接移除物品
-				# 这是一个回退机制，确保物品总是会被正确消耗
-				items.remove_at(idx)
+				# 传统消耗品逻辑：减少物品数量
+				# 支持两种状态对象类型：RefCounted和Dictionary
+				if state is RefCounted and state.has_method("stack_count"):
+					# 如果状态是RefCounted对象且有stack_count方法
+					state.stack_count -= 1
+					# 如果数量减至0或更少，移除物品
+					if state.stack_count <= 0:
+						items.remove_at(idx)
+						# 发送物品移除事件
+						item_removed.emit(idx, item)
+				elif state is Dictionary and "stack_count" in state:
+					# 如果状态是字典且包含stack_count键
+					state.stack_count -= 1
+					# 如果数量减至0或更少，移除物品
+					if state.stack_count <= 0:
+						items.remove_at(idx)
+						# 发送物品移除事件
+						item_removed.emit(idx, item)
+				else:
+					# 如果没有找到数量属性，直接移除物品
+					# 这是一个回退机制，确保物品总是会被正确消耗
+					items.remove_at(idx)
+					# 发送物品移除事件
+					item_removed.emit(idx, item)
 		else:
 			# 如果找不到玩家节点，输出警告
 			print("警告: 无法找到玩家节点，无法应用消耗品效果")
 	else:
 		# 如果消耗品没有设置效果，输出警告
-		print("警告: 消耗品没有设置效果: ", item.name_tr_key)
+		print("警告: 消耗品没有设置效果: ", item.名称翻译键)

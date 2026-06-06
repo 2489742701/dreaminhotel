@@ -1,0 +1,6 @@
+[gd_resource type="Resource" script_class="AnimSwing" load_steps=2 format=3 uid="uid://bm51munhivi88"]
+
+[ext_resource type="Script" uid="uid://d3o6brwsd5nc8" path="res://scripts/characters/animations/AnimSwing.gd" id="1_swing"]
+
+[resource]
+script = ExtResource("1_swing")

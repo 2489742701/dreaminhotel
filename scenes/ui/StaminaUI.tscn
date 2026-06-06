@@ -1,8 +1,9 @@
-[gd_scene load_steps=2 format=3 uid="uid://bvbst0r1qitan"]
+[gd_scene load_steps=3 format=3 uid="uid://bvbst0r1qitan"]
 
-[ext_resource type="Script" path="res://scripts/ui/stamina_ui.gd" id="1_1qqcv"]
+[ext_resource type="Script" uid="uid://d2uxsrl8ouc3q" path="res://scripts/ui/stamina_ui.gd" id="1_1qqcv"]
+[ext_resource type="Script" uid="uid://c3g3erp1fb2c1" path="res://scripts/ui/hotbar_ui.gd" id="2_hotbar"]
 
-[node name="Control" type="Control"]
+[node name="Control2" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -13,15 +14,72 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_1qqcv")
 
+[node name="HotbarUI" type="Control" parent="."]
+layout_mode = 1
+anchor_left = 0.5
+anchor_top = 0.83300006
+anchor_right = 0.5
+anchor_bottom = 0.87200004
+offset_left = -9.5
+offset_top = 6.3829346
+offset_right = 9.5
+offset_bottom = 5.0719604
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("2_hotbar")
+
+[node name="HotbarContainer" type="HBoxContainer" parent="HotbarUI"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.209
+anchor_top = 0.22700001
+anchor_right = 0.70500004
+anchor_bottom = 0.87700003
+offset_left = 0.076984406
+offset_top = 0.020999908
+offset_right = -0.045021057
+offset_bottom = -0.028999329
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="Slot1" type="TextureButton" parent="HotbarUI/HotbarContainer"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+focus_mode = 0
+stretch_mode = 0
+
+[node name="Slot2" type="TextureButton" parent="HotbarUI/HotbarContainer"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+focus_mode = 0
+stretch_mode = 0
+
+[node name="Slot3" type="TextureButton" parent="HotbarUI/HotbarContainer"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+focus_mode = 0
+stretch_mode = 0
+
 [node name="HBoxContainer" type="HBoxContainer" parent="."]
 layout_mode = 1
 anchors_preset = -1
-anchor_right = 24.018
-anchor_bottom = 19.13
-offset_left = 207.0
-offset_top = 595.0
-offset_right = -26688.8
-offset_bottom = -11755.4
+anchor_left = 0.20500001
+anchor_top = 0.943
+anchor_right = 0.79800004
+anchor_bottom = 1.0
+offset_left = -0.36502075
+offset_top = -0.007019043
+offset_right = -0.094055176
+offset_bottom = -10.0
+grow_horizontal = 2
+grow_vertical = 0
 
 [node name="TextureRect" type="TextureRect" parent="HBoxContainer"]
 layout_mode = 2
@@ -34,3 +92,51 @@ size_flags_horizontal = 3
 size_flags_vertical = 4
 size_flags_stretch_ratio = 1.64
 value = 100.0
+
+[node name="物品名称标签" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -99.5
+offset_top = -70.0
+offset_right = 100.5
+offset_bottom = -40.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "空手"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="状态文本标签" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -200.0
+offset_top = -30.0
+offset_right = -20.0
+offset_bottom = -10.0
+grow_horizontal = 2
+grow_vertical = 2
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="字幕文本区域" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 82.0
+offset_top = -158.0
+offset_right = -18.0
+offset_bottom = -58.0
+grow_horizontal = 2
+grow_vertical = 0
+horizontal_alignment = 1
+vertical_alignment = 1

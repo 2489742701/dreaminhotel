@@ -1,19 +1,19 @@
-[gd_resource type="Resource" script_class="Item" load_steps=5 format=3 uid="uid://dy2yjwal0hpjs"]
+[gd_resource type="Resource" script_class="Item" load_steps=6 format=3 uid="uid://dy2yjwal0hpjs"]
 
 [ext_resource type="Script" uid="uid://bbvoofg1yra28" path="res://scripts/items/Item.gd" id="1_niega"]
-[ext_resource type="Script" uid="uid://hvfpwl6emwt5" path="res://scripts/items/effects/EffectRestoreStamina.gd" id="1_u364o"]
-
-[sub_resource type="Resource" id="Resource_xlgv8"]
-script = ExtResource("1_u364o")
-metadata/_custom_type_script = "uid://hvfpwl6emwt5"
-
-[sub_resource type="CapsuleMesh" id="CapsuleMesh_niega"]
-height = 1.5
+[ext_resource type="Resource" uid="uid://c2m5aww1ka7yk" path="res://resources/items/effects/EffectRestoreStamina.tres" id="2_restore"]
+[ext_resource type="Texture2D" uid="uid://4hapoyqqqfgq" path="res://resources/Icon/水_画板 1.png" id="2_riwn3"]
+[ext_resource type="Resource" uid="uid://dxdw52ma8gpvd" path="res://resources/animations/drink_animation.tres" id="3_drink"]
+[ext_resource type="ArrayMesh" uid="uid://ch1ebxmcdgnbj" path="res://scenes/items/Drink/Drink.tres" id="3_gdb45"]
 
 [resource]
 script = ExtResource("1_niega")
-kind = 3
-name_tr_key = "动力饮料"
-desc_tr_key = "恢复少量的体力"
-mesh = SubResource("CapsuleMesh_niega")
-consumable_effect = SubResource("Resource_xlgv8")
+"物品类型" = 2
+"名称翻译键" = "能量饮料"
+"图标" = ExtResource("2_riwn3")
+"模型" = ExtResource("3_gdb45")
+"图标颜色" = Color(0.8039216, 0.83137256, 0, 1)
+"消耗品效果" = ExtResource("2_restore")
+"可饮用次数" = 3
+"最大饮用次数" = 3
+"手持动画" = ExtResource("3_drink")

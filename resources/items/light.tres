@@ -1,9 +1,20 @@
-[gd_resource type="Resource" script_class="Item" load_steps=2 format=3 uid="uid://bg6ky3qyfcwfe"]
+[gd_resource type="Resource" script_class="Item" load_steps=3 format=3 uid="uid://bg6ky3qyfcwfe"]
 
 [ext_resource type="Script" uid="uid://bbvoofg1yra28" path="res://scripts/items/Item.gd" id="1_5i6rl"]
 
+[sub_resource type="BoxMesh" id="BoxMesh_flashlight"]
+
 [resource]
 script = ExtResource("1_5i6rl")
-kind = 1
-name_tr_key = "手电筒"
+"物品类型" = 4
+"名称翻译键" = "手电筒"
+"描述翻译键" = "一个可以照亮黑暗的手电筒"
+"模型" = SubResource("BoxMesh_flashlight")
+"电池容量" = 100.0
+"当前电量" = 100.0
+"亮度" = 1.0
+"范围" = 10.0
+"射程" = 15.0
+"电量消耗率" = 1.0
+"图标颜色" = Color(0.9, 0.9, 0.9, 1)
 metadata/_custom_type_script = "uid://bbvoofg1yra28"

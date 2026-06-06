@@ -1,0 +1,177 @@
+[gd_scene load_steps=20 format=4 uid="uid://bs4msklecf7pe"]
+
+[ext_resource type="Texture2D" uid="uid://b13ve8ksovk2q" path="res://assets/world/Tools/Wood/木板条_0.jpg" id="1_uly24"]
+[ext_resource type="Texture2D" uid="uid://da2xyed08behb" path="res://assets/world/Tools/Wood/木板条_1.jpg" id="2_h750n"]
+[ext_resource type="Texture2D" uid="uid://uqynd34lkoxq" path="res://assets/world/Tools/Wood/木板条_2.jpg" id="3_mw322"]
+[ext_resource type="Texture2D" uid="uid://c1yqxvrbv5nau" path="res://assets/world/Tools/Wood/木板条_3.jpg" id="4_nrh0v"]
+[ext_resource type="Texture2D" uid="uid://c7x0rkajve3eq" path="res://assets/world/Tools/Wood/木板条_4.jpg" id="5_rfyg8"]
+[ext_resource type="Texture2D" uid="uid://crtyf3h13e1pq" path="res://assets/world/Tools/Wood/木板条_5.jpg" id="6_ayou3"]
+[ext_resource type="Texture2D" uid="uid://cchtliyk8xbro" path="res://assets/world/Tools/Wood/木板条_6.jpg" id="7_y0nqw"]
+[ext_resource type="Texture2D" uid="uid://4rg1aifwb7d6" path="res://assets/world/Tools/Wood/木板条_7.jpg" id="8_j8op3"]
+[ext_resource type="Texture2D" uid="uid://5w4g57osqaxi" path="res://assets/world/Tools/Wood/木板条_8.jpg" id="9_qbcck"]
+[ext_resource type="ArrayMesh" uid="uid://dwufl50m77cdq" path="res://scenes/items/Wood/wood.tres" id="10_h750n"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wk6i3"]
+resource_name = "Wooden_Floor_vl0mbenn"
+cull_mode = 2
+albedo_color = Color(0.9063318, 0.9063318, 0.9063318, 1)
+albedo_texture = ExtResource("1_uly24")
+metallic = 1.0
+metallic_texture = ExtResource("2_h750n")
+metallic_texture_channel = 2
+roughness_texture = ExtResource("2_h750n")
+roughness_texture_channel = 1
+emission_enabled = true
+normal_enabled = true
+normal_texture = ExtResource("3_mw322")
+texture_filter = 1
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_gdmtj"]
+_surfaces = [{
+"aabb": AABB(-0.021638839, -0.16398425, -0.003998646, 0.043277677, 0.3279685, 0.007997292),
+"format": 34896613377,
+"index_count": 108,
+"index_data": PackedByteArray("DgAAAAQABAAAAAIAAwAEAAIAAAABAAIAAgABAAMABQAEAAMABQAOAAQAAQAFAAMADwAOAAUADwAFAAEADgAIAAAADwAQAA4AEAAIAA4ADwABABEAEQAQAA8AAAAHAAEAEQABAAcACAAHAAAAEQAHABIACAALAAcAEgAHAAsAEAAKAAgACgALAAgAEQATABAAEwAKABAAEgATABEAEwAJAAoAEgAGABMAEwAGAAkAEgALAAYACgAJAAwACgAMAAsACQAGAAwABgALAA0ACwAMAA0ADAAGAA0A"),
+"lods": [2.5437712e-06, PackedByteArray("AAABAAIAAgABAAMABAAAAAIAAwAEAAIAAQAFAAMABQAEAAMABgAFAAEABgAEAAUAAAAHAAEABgABAAcABAAIAAAACAAHAAAABgAJAAQABAAKAAgACQAKAAQACAALAAcACgALAAgABgAHAAsACgAJAAwACQAGAAwACgAMAAsADAAGAA0ABgALAA0ACwAMAA0A")],
+"name": "Wooden_Floor_vl0mbenn",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 20,
+"vertex_data": PackedByteArray("o5f/////AACjl///AAAAAP///////wAA/////wAAAAD//wAA//8AAP//AAAAAAAAAAAAAAAAAACPfgzuAAAAAI9+DO7//wAAAAAAAP//AACybf////8AALJt//8AAAAAAAC9+f//AAAAAL35AAAAAKOXAAD//wAAo5cAAAAAAABbgQAA//8AAFuBAAAAAAAAsm0AAAAAAACybQAA//8AAA==")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_fjxae"]
+resource_name = "木板条_立方体_3"
+_surfaces = [{
+"aabb": AABB(-0.021638839, -0.16398425, -0.003998646, 0.043277677, 0.3279685, 0.007997292),
+"attribute_data": PackedByteArray("o5f//6OXAAD///////8AAAAA/////wAA/////wAAAAAAAP//sm0AAP////8AAAAAW4EAAKOXAAD//wAAsm3//7JtAABbgf//W4EAAFuB//9bgQAAo5f//6OXAACybf//AAD//7JtAAAAAAAA/////wAA/////wAAAAAAAP////8AAP//W2gAAAAAAACjfgAATJIAAP//AAD/////AAD/////AAAAAAAAo5f//1uB//+ybf//W2j//6N+//9Mkv//o5f//6OXAABbgQAAW4H//7JtAACybf//"),
+"format": 34896613399,
+"index_count": 108,
+"index_data": PackedByteArray("KgANAAoACgANAA4AKgAMAA0AKwAMACoAKwAJAAwALAAJACsALAAIAAkACQAIAAsAAAABAAIAAgABAAMALQAhAC4ALQAgACEAIQAgACIALgAhACMALgAjAC8ALwAjACQALwAkAB8AHwAkACUAMAAxAAYABgAxAAUAMAAyADEAMwAyADAAMwA0ADIANQA0ADMANQAEADQANAAEAAcADwAQABEAEQAQABIAEwAUABUAFQAUABYAFwAYABkAGQAYABoAGwAcAB0AHQAcAB4AJgAnACgAKAAnACkA"),
+"lods": [2.5437712e-06, PackedByteArray("AAABAAIAAgABAAMABAAFAAYABAAHAAUACAAJAAoACQAIAAsACgAJAAwACgAMAA0ACgANAA4ADwAQABEAEQAQABIAEwAUABUAFQAUABYAFwAYABkAGQAYABoAGwAcAB0AHQAcAB4AHwAgACEAIQAgACIAHwAhACMAHwAjACQAHwAkACUAJgAnACgAKAAnACkA")],
+"material": SubResource("StandardMaterial3D_wk6i3"),
+"name": "Wooden_Floor_vl0mbenn",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 54,
+"vertex_data": PackedByteArray("o5f//////7+jl///AAD/v/////////+//////wAA/78AAAAAAAD/v///AAD///+///8AAAAA/78AAAAA////vwAAAAD//5SAsm3/////yov//wAA//8AgAAAvfn//52Qj34M7v//b4Sjl/////+IhP///////wCAsm3/////fdKybf//AAB90o9+DO7//33Sj34M7gAAfdKPfgzu//8t0Y9+DO4AAC3Ro5f/////LdGjl///AAAt0bJt/////6vBAAC9+f//q8Gybf//AACrwQAAvfkAAKvBAAAAAP///78AAAAAAAD/vwAAvfn///+/AAC9+QAA/78AAAAAAAD/////AAAAAP//o5f//wAA////////AAD//49+DO4AAP//sm3//wAA//8AAL35AAD/////AAAAAP+///8AAP///7//////AAD/v/////////+/o5cAAP//LYBbgQAA//8bgLJtAAD//wCAo5cAAAAA//9bgQAAAAD//7JtAAAAAP//o5cAAAAA/7+jlwAA////v1uBAAD///+/W4EAAAAA/7+ybQAA////v7JtAAAAAP+/////f////3////9/////fwAA/38AAP9/AAD/fwAA/3////////////9//////////3//f///////f///QK4gV0CuIFdAriBXQK4gVwPY988D2PfPA9j3zwPY989F7XKlRe1ypUXtcqVF7XKl/3////9/////f////3///xZ/Fv//f///rXmt+f9///8rhdL6B3AG8BBqEOr/fwAA/38AAP9/AAD/fwAA//////9//3//f////3///7x/vP8vgM7/AAD/fwAA/38AAP9/AAD/fwAA/38AAP9/")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_gdmtj")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3f6mo"]
+resource_name = "Wooden_Planks_wczjegqs"
+cull_mode = 2
+albedo_color = Color(0.9063318, 0.9063318, 0.9063318, 1)
+albedo_texture = ExtResource("4_nrh0v")
+metallic = 1.0
+metallic_texture = ExtResource("5_rfyg8")
+metallic_texture_channel = 2
+roughness_texture = ExtResource("5_rfyg8")
+roughness_texture_channel = 1
+emission_enabled = true
+normal_enabled = true
+normal_texture = ExtResource("6_ayou3")
+texture_filter = 1
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_ugly1"]
+_surfaces = [{
+"aabb": AABB(-0.051053617, -0.16398425, -0.0060025114, 0.102107234, 0.3279685, 0.012005023),
+"format": 34896613377,
+"index_count": 36,
+"index_data": PackedByteArray("AAABAAIAAQAAAAMAAgABAAQAAwAAAAUAAAACAAUABgABAAMABAABAAYABQAGAAMAAgAEAAcABQACAAcABwAEAAYABwAGAAUA"),
+"name": "Wooden_Planks_wczjegqs",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 8,
+"vertex_data": PackedByteArray("//8AAAAAAAAAAAAAAAAAAP//AAD//wAAAACf9gAAAAAAAAAA//8AAP////9KpgAAAACf9v//AAD///////8AAA==")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_3tcd2"]
+resource_name = "木板条_立方体_2"
+_surfaces = [{
+"aabb": AABB(-0.051053617, -0.16398425, -0.0060025114, 0.102107234, 0.3279685, 0.012005023),
+"attribute_data": PackedByteArray("/////wAA/////wAAAAAAAP////8AAP////8AAAAAAAD/////AAD/////AAAAAAAA/////wAA/////wAAAAAAAP////8AAP////8AAAAAAAD/////AAD/////AAAAAAAA"),
+"format": 34896613399,
+"index_count": 36,
+"index_data": PackedByteArray("AAABAAIAAgABAAMABAAFAAYABgAFAAcACAAJAAoACgAJAAsADAANAA4ADgANAA8AEAARABIAEgARABMAFAAVABYAFgAVABcA"),
+"material": SubResource("StandardMaterial3D_3f6mo"),
+"name": "Wooden_Planks_wczjegqs",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 24,
+"vertex_data": PackedByteArray("//8AAAAA/78AAAAAAAD/v///AAD///+/AAAAAP///7////////8iwAAAn/b//wTA/////0qmH8AAAJ/2AAADwAAAAAD///+/AAAAAAAA/78AAJ/2////vwAAn/YAAP+/AAAAAAAA/////wAAAAB+/gAAn/YAAHr+/////0qm8/z//wAAAAD/v///AAD///+//////0qm/7//////////v///AAD//wCAAAAAAP//6YD////////HgwAAn/b//8SEAAD/fwAA/38AAP9/AAD/f0j5bI0J9XON+fhsjez0c43/f////3////9/////f////3///y2CdQFvhtIFNogNB/9/AAD/fwAA/38AAP9/AAD/f///////////////////")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_ugly1")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6dnca"]
+resource_name = "Wooden_Facade_vlptbfb"
+cull_mode = 2
+albedo_color = Color(0.9063318, 0.9063318, 0.9063318, 1)
+albedo_texture = ExtResource("7_y0nqw")
+metallic = 1.0
+metallic_texture = ExtResource("8_j8op3")
+metallic_texture_channel = 2
+roughness_texture = ExtResource("8_j8op3")
+roughness_texture_channel = 1
+emission_enabled = true
+normal_enabled = true
+normal_texture = ExtResource("9_qbcck")
+texture_filter = 1
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_hork2"]
+_surfaces = [{
+"aabb": AABB(-0.04590174, -0.18628517, -0.0026528742, 0.09180348, 0.37257034, 0.0053057484),
+"format": 34896613377,
+"index_count": 156,
+"index_data": PackedByteArray("EgATAAIAEgACAAYABgACAAQAAgADAAQAAgATAAMABAADAAUABQAGAAQAAwAHAAUABwAGAAUAEwAHAAMAEgAGABQAEgAVABMAFAAVABIAFQAJABMAEwAJAAcABwAIAAYAFAAGAAgACQAIAAcAFAAWABUAFQALAAkAFgALABUACwAKAAkACQAKAAgAFAAIABcAFwAIAAoAFwAWABQACwAMAAoAFwAKABgAGAAKAAwADQAMAAsAFgANAAsAFwAZABYAGQANABYAGAAZABcADQAPAAwAGAAMABoAGgAMAA8AGgAbABgAGAAbABkAGQAOAA0AGwAOABkADgAPAA0AGwABAA4AGgAAABsAGwAAAAEAGgAPAAAADgABABAADgAQAA8AAQAAABAAAAAPABEADwAQABEAEAAAABEA"),
+"lods": [1.7118654e-06, PackedByteArray("AAABAAIAAgABAAMAAgADAAQABAADAAUABgACAAQABQAGAAQAAAACAAYAAwAHAAUABwAGAAUAAQAHAAMABwAIAAYAAAAGAAgACQAIAAcAAQAJAAcACQAKAAgAAAAIAAoACwAKAAkAAQALAAkACwAMAAoAAAAKAAwAAQANAAsADQAMAAsAAQAOAA0ADQAPAAwADgAPAA0AAAAMAA8ADgABABAAAQAAABAADgAQAA8AEAAAABEAAAAPABEADwAQABEA")],
+"name": "Wooden_Facade_vlptbfb",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 28,
+"vertex_data": PackedByteArray("AAAAAAAAAAAAAAAA//8AAP//AAAAAAAA//8AAP//AAD/////AAAAAP///////wAASXTv7QAAAABJdO/t//8AAMli//8AAAAAyWL/////AABSRf//AAAAAFJF/////wAA/Dcw8gAAAAD8NzDy//8AABIt/////wAAEi3//wAAAAAAAP////8AAAAA//8AAAAA3G4AAAAAAADcbgAA//8AAMliAAAAAAAAyWIAAP//AABSRQAA//8AAFJFAAAAAAAA3zYAAAAAAADfNgAA//8AABItAAAAAAAAEi0AAP//AAA=")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_p4xev"]
+resource_name = "木板条_立方体_1"
+_surfaces = [{
+"aabb": AABB(-0.04590174, -0.18628517, -0.0026528742, 0.09180348, 0.37257034, 0.0053057484),
+"attribute_data": PackedByteArray("AAD//wAAAAD///////8AAAAA///cbgAA////////AADJYgAAUkUAAN82AAASLQAAAAAAANxu///cbgAA////////AADJYv//yWIAANxu///cbgAAEi3//xItAADfNv//3zYAAFJF//9SRQAAyWL//8liAADfNv//3zYAAFJF//9SRQAAEi3//wAA//8SLQAAAAAAAP////8AAP////8AAAAAAAD/////AAD//yKRAAAAAAAANZ0AAKy6AAAfyQAA7NIAAP//AAD/////AAD/////AAAAAAAA3G7//9xuAADJYgAAyWL//1JFAABSRf//3zYAAN82//8SLQAAEi3//9xu///JYv//UkX//982//8SLf//IpH//zWd//+suv//H8n//+zS//8="),
+"format": 34896613399,
+"index_count": 156,
+"index_data": PackedByteArray("NgA3AAIAAgA3AAMANgA4ADcAOQA4ADYAOQA6ADgAOwA6ADkAOwA8ADoAPQA8ADsAPQA+ADwAPwA+AD0APwAAAD4APgAAAAEAQAAFAAYABgAFAAcAQAAIAAUAQQAIAEAAQQAJAAgAQgAJAEEAQgAKAAkAQwAKAEIAQwALAAoARAALAEMARAAEAAsACwAEAAwADQAOAA8ADwAOABAARQArAEYARQAqACsAKwAqACwARgArAC0ARgAtAEcARwAtAC4ARwAuAEgASAAuAC8ASAAvAEkASQAvADAASQAwACkAKQAwADEAEQASABMAEwASABQAFQAWABcAFwAWABgAGQAaABsAGwAaABwAHQAeAB8AHwAeACAAIQAiACMAIwAiACQAJQAmACcAJwAmACgAMgAzADQANAAzADUA"),
+"lods": [1.7118654e-06, PackedByteArray("AAABAAIAAgABAAMABAAFAAYABgAFAAcABAAIAAUABAAJAAgABAAKAAkABAALAAoACwAEAAwADQAOAA8ADwAOABAAEQASABMAEwASABQAFQAWABcAFwAWABgAGQAaABsAGwAaABwAHQAeAB8AHwAeACAAIQAiACMAIwAiACQAJQAmACcAJwAmACgAKQAqACsAKwAqACwAKQArAC0AKQAtAC4AKQAuAC8AKQAvADAAKQAwADEAMgAzADQANAAzADUA")],
+"material": SubResource("StandardMaterial3D_6dnca"),
+"name": "Wooden_Facade_vlptbfb",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 74,
+"vertex_data": PackedByteArray("AAAAAAAA/78AAAAA////v///AAAAAP+///8AAP///78AAAAA//8AgEl07+3//7ea//8AAP//v4H///////+vk8li/////16FUkX/////qIX8NzDy//+KghIt/////4KEAAD/////AIBJdO/t//9Uwkl07+0AAFTC////////VML/////AABUwsli/////wzQyWL//wAADNBJdO/t//8M0El07+0AAAzQEi3/////9dASLf//AAD10Pw3MPL///XQ/Dcw8gAA9dBSRf//////v1JF//8AAP+/yWL//////7/JYv//AAD/v/w3MPL//xDQ/Dcw8gAAENBSRf////8Q0FJF//8AABDQEi3//////78AAP//////vxIt//8AAP+/AAD//wAA/78AAAAA////vwAAAAAAAP+/AAD//////78AAP//AAD/vwAAAAAAAP////8AAAAA//9JdO/tAAD///////8AAP//yWL//wAA//9SRf//AAD///w3MPIAAP//Ei3//wAA//8AAP//AAD/////AAAAAP+///8AAP///7//////AAD/v/////////+/3G4AAAAA/7/cbgAA////v8liAAD///+/yWIAAAAA/79SRQAA////v1JFAAAAAP+/3zYAAP///7/fNgAAAAD/vxItAAD///+/Ei0AAAAA/7/cbgAA//83gMliAAD//wCAUkUAAP//K4DfNgAA//8igBItAAD//wCA3G4AAAAA///JYgAAAAD//1JFAAAAAP//3zYAAAAA//8SLQAAAAD//wAA/38AAP9/AAD/fwAA/3//f////3//f////////////3//f///////f/9//3//f/9////e6kCq3upAqt7qQKre6kCqorHRWKKx0ViisdFYorHRWFWwKlhVsCpYVbAqWFWwKlj///9/////f////3////9/zdhizs3YYs7N2GLOzdhizv///3////9/////f////3//f////3////9/////f////3///059Tv1KoLPfsWax5lmIpfcteC34tYJJ/RKH6/j/f////38AAP9/AAD/fwAA/38AAAAA/38AAP9/AAD/fwAA/38AAP9/AAD/fwAA/38AAP9/AAD/fwAA/3//f/9//3//////////f/9//3////9///9bgKL//3///75/vv84gMb/")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_hork2")
+
+[node name="木板条" type="Node3D"]
+
+[node name="立方体_3" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0075534754, 0.023053331, -0.00083047163)
+mesh = SubResource("ArrayMesh_fjxae")
+skeleton = NodePath("")
+
+[node name="立方体_2" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.038101554, -0.011526666, 0.010815313)
+mesh = SubResource("ArrayMesh_3tcd2")
+skeleton = NodePath("")
+
+[node name="立方体_1" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.030548075, -0.011526666, -0.009984842)
+mesh = SubResource("ArrayMesh_p4xev")
+skeleton = NodePath("")
+
+[node name="木板" type="MeshInstance3D" parent="."]
+mesh = ExtResource("10_h750n")

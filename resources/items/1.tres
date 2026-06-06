@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="Item" load_steps=4 format=3 uid="uid://bo36668vm1slu"]
+
+[ext_resource type="Script" uid="uid://bbvoofg1yra28" path="res://scripts/items/Item.gd" id="1_cf3kl"]
+[ext_resource type="Script" uid="uid://bwxnasyjpv6h8" path="res://scripts/items/effects/ConsumableEffect.gd" id="2_xdmmw"]
+
+[sub_resource type="Resource" id="Resource_j4vqn"]
+script = ExtResource("2_xdmmw")
+metadata/_custom_type_script = "uid://bwxnasyjpv6h8"
+
+[sub_resource type="BoxMesh" id="BoxMesh_consumable"]
+
+[resource]
+script = ExtResource("1_cf3kl")
+"物品类型" = 2
+"名称翻译键" = "测试消耗品"
+"描述翻译键" = "这是一个测试用的消耗品"
+"模型" = SubResource("BoxMesh_consumable")
+"消耗品效果" = SubResource("Resource_j4vqn")
+"图标颜色" = Color(0.5, 0.8, 0.5, 1)
+metadata/_custom_type_script = "uid://bbvoofg1yra28"

@@ -19,7 +19,7 @@ extends Resource
 # 消耗品使用时播放的音效
 # 在物品被使用时，系统会尝试播放这个音效
 # 开发者可以在编辑器中拖放音效文件到这里
-@export var use_sound: AudioStream
+@export var 使用音效: AudioStream
 
 # ========== 核心方法 ==========
 

@@ -4,8 +4,9 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://cawwpugkn3l7q"
 path.s3tc="res://.godot/imported/门和墙壁_0.jpg-d9cc30621253a194fc7477e8ee71432a.s3tc.ctex"
+path.etc2="res://.godot/imported/门和墙壁_0.jpg-d9cc30621253a194fc7477e8ee71432a.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 generator_parameters={
@@ -15,7 +16,7 @@ generator_parameters={
 [deps]
 
 source_file="res://assets/world/hotel/wall+door/wall/门和墙壁_0.jpg"
-dest_files=["res://.godot/imported/门和墙壁_0.jpg-d9cc30621253a194fc7477e8ee71432a.s3tc.ctex"]
+dest_files=["res://.godot/imported/门和墙壁_0.jpg-d9cc30621253a194fc7477e8ee71432a.s3tc.ctex", "res://.godot/imported/门和墙壁_0.jpg-d9cc30621253a194fc7477e8ee71432a.etc2.ctex"]
 
 [params]
 

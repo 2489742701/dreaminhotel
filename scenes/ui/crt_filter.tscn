@@ -1,0 +1,19 @@
+[gd_scene load_steps=2 format=3 uid="uid://ii1bjs5ddcet"]
+
+[ext_resource type="Script" uid="uid://3m5wgde080qa" path="res://scripts/ui/crt_filter_controller.gd" id="1_crt"]
+
+[node name="CRTFilter" type="CanvasLayer"]
+layer = 100
+script = ExtResource("1_crt")
+"启用" = false
+
+[node name="CRTFilterColorRect" type="ColorRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 1920.0
+offset_bottom = 1080.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0, 0, 0, 0)

@@ -1,0 +1,166 @@
+[gd_scene load_steps=16 format=4 uid="uid://bvphrhvedyf57"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5pr6x"]
+resource_name = "材质.2"
+albedo_color = Color(0, 0, 0, 1)
+metallic = 1.0
+emission_enabled = true
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_1ih6x"]
+_surfaces = [{
+"aabb": AABB(-2.3613276, 0.594741, -2.5241175, 4.7226553, 1e-05, 5.048235),
+"format": 34896613377,
+"index_count": 12,
+"index_data": PackedByteArray("AAABAAIAAgABAAMABAAFAAYABgAFAAcA"),
+"name": "材质.2",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 8,
+"vertex_data": PackedByteArray("AAAAAP//AAD//wAA//8AAAAAAACl8QAA//8AAKXxAAD//wAAAAAAAAAAAAAAAAAA//8AAFkOAAAAAAAAWQ4AAA==")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_ewtxd"]
+resource_name = "天花_天花-材质_2"
+_surfaces = [{
+"aabb": AABB(-2.3613276, 0.594741, -2.5241175, 4.7226553, 1e-05, 5.048235),
+"attribute_data": PackedByteArray("AAAAAP//AAAAAAAA//8AAP////8AAP///////wAA//8="),
+"format": 34896613399,
+"index_count": 12,
+"index_data": PackedByteArray("AAABAAIAAgABAAMABAAFAAYABgAFAAcA"),
+"material": SubResource("StandardMaterial3D_5pr6x"),
+"name": "材质.2",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 8,
+"vertex_data": PackedByteArray("AAAAAP///7///wAA////vwAAAACl8f+///8AAKXx/7///wAAAAD/vwAAAAAAAP+///8AAFkO/78AAAAAWQ7/vwAA/38AAP9/AAD/fwAA/38AAP9/AAD/fwAA/38AAP9/")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_1ih6x")
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_qe6wu"]
+load_path = "res://.godot/imported/天花_0.jpg-80c9de1305889b447d4e0f60e9049cc6.s3tc.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_g3b46"]
+load_path = "res://.godot/imported/天花_1.jpg-cc91af580bb4d8f3ff9b722f2ea6b169.s3tc.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_mhbt7"]
+load_path = "res://.godot/imported/天花_2.jpg-e699c7b6f30da362b4c4867f2e851846.s3tc.ctex"
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_f3a5l"]
+resource_name = "Wooden_Facade_vlptbfb"
+albedo_color = Color(0.9063318, 0.9063318, 0.9063318, 1)
+albedo_texture = SubResource("CompressedTexture2D_qe6wu")
+metallic = 1.0
+metallic_texture = SubResource("CompressedTexture2D_g3b46")
+metallic_texture_channel = 2
+roughness_texture = SubResource("CompressedTexture2D_g3b46")
+roughness_texture_channel = 1
+emission_enabled = true
+normal_enabled = true
+normal_texture = SubResource("CompressedTexture2D_mhbt7")
+texture_filter = 1
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_e8n3d"]
+_surfaces = [{
+"aabb": AABB(-2.3613276, 0, -2.5241175, 4.7226553, 0.594741, 5.048235),
+"format": 34896613377,
+"index_count": 36,
+"index_data": PackedByteArray("AAABAAIAAgABAAMAAAAEAAEABQAEAAAABQAGAAQABwAGAAUACAAJAAoACgAJAAsACAAMAAkADQAMAAgADQAOAAwADwAOAA0A"),
+"name": "Wooden_Facade_vlptbfb",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 16,
+"vertex_data": PackedByteArray("//+nhwAAAAAAAKeHAAAAAP////8AAAAAAAD//wAAAAAAAKeHtA0AAP//p4e0DQAAAAAAALQNAAD//wAAtA0AAAAAp4f//wAA//+nh///AAAAAP////8AAP///////wAA//+nh0ryAAAAAKeHSvIAAP//AABK8gAAAAAAAEryAAA=")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_x8ak2"]
+resource_name = "天花_天花-Wooden_Facade_vlptbfb"
+_surfaces = [{
+"aabb": AABB(-2.3613276, 0, -2.5241175, 4.7226553, 0.594741, 5.048235),
+"attribute_data": PackedByteArray("AAD///9///8AAP///3////9//38AAP9//3//fwAA/3//f/9/AAD/f/9//38AAP9/AAD///9///8AAP///3///wAA////f///AAD///9/////f/9/AAD/f/9//38AAP9/"),
+"format": 34896613399,
+"index_count": 36,
+"index_data": PackedByteArray("AAABAAIAAgABAAMABAAFAAYABgAFAAcACAAJAAoACgAJAAsADAANAA4ADgANAA8AEAARABIAEgARABMAFAAVABYAFgAVABcA"),
+"material": SubResource("StandardMaterial3D_f3a5l"),
+"name": "Wooden_Facade_vlptbfb",
+"primitive": 3,
+"uv_scale": Vector4(3.9215686, 2, 0, 0),
+"vertex_count": 24,
+"vertex_data": PackedByteArray("//+nhwAA/n8AAKeHAAD+f/////8AAP5/AAD//wAA/n8AAKeH////////p4f/////AAD//////////////////wAAp4dK8v+///+nh0ry/78AAKeH////v///p4f///+///+nh7QN/78AAKeHtA3/v///p4cAAP+/AACnhwAA/7///wAAtA3+fwAAAAC0Df5///+nh7QN/n8AAKeHtA3+fwAAAABK8v////8AAEry//8AAKeHSvL/////p4dK8v///3////9/////f////3///////3////9/////f////3////9/////f////3////9/////f////3////9/////f/9/////f////3////9///////9/////f////3////9/")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_e8n3d")
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_j7bri"]
+load_path = "res://.godot/imported/天花_3.jpg-aba43b1f7de4a7565337115029b441b2.s3tc.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_xxrhl"]
+load_path = "res://.godot/imported/天花_4.jpg-0a9bed86620c49dcb9c63d3376ac727b.s3tc.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_gnjio"]
+load_path = "res://.godot/imported/天花_5.jpg-6a5aa37a185b11e82d934da7cd01f570.s3tc.ctex"
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_o7dly"]
+resource_name = "Wooden_Floor_vl0mbenn"
+albedo_color = Color(0.9063318, 0.9063318, 0.9063318, 1)
+albedo_texture = SubResource("CompressedTexture2D_j7bri")
+metallic = 1.0
+metallic_texture = SubResource("CompressedTexture2D_xxrhl")
+metallic_texture_channel = 2
+roughness_texture = SubResource("CompressedTexture2D_xxrhl")
+roughness_texture_channel = 1
+emission_enabled = true
+normal_enabled = true
+normal_texture = SubResource("CompressedTexture2D_gnjio")
+texture_filter = 1
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_xba0h"]
+_surfaces = [{
+"aabb": AABB(-2.3613276, 0, -2.253853, 4.7226553, 1e-05, 4.507706),
+"format": 34896613377,
+"index_count": 6,
+"index_data": PackedByteArray("AAABAAIAAgABAAMA"),
+"name": "Wooden_Floor_vl0mbenn",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 4,
+"vertex_data": PackedByteArray("AAAAAP//AAAAAAAAAAAAAP//AAD//wAA//8AAAAAAAA=")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_igy1v"]
+resource_name = "天花_天花-Wooden_Floor_vl0mbenn"
+_surfaces = [{
+"aabb": AABB(-2.3613276, 0, -2.253853, 4.7226553, 1e-05, 4.507706),
+"attribute_data": PackedByteArray("/3//f/9/AAD///9///8AAA=="),
+"format": 34896613399,
+"index_count": 6,
+"index_data": PackedByteArray("AAABAAIAAgABAAMA"),
+"material": SubResource("StandardMaterial3D_o7dly"),
+"name": "Wooden_Floor_vl0mbenn",
+"primitive": 3,
+"uv_scale": Vector4(2.9476533, 3.3977778, 0, 0),
+"vertex_count": 4,
+"vertex_data": PackedByteArray("AAAAAP///78AAAAAAAD/v///AAD///+///8AAAAA/7////9/////f////3////9/")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_xba0h")
+
+[node name="Cell" type="Node3D"]
+
+[node name="天花-材质_2" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -1, 8.742278e-08, 0, -8.742278e-08, -1, 0, 1.7199999, 0)
+mesh = SubResource("ArrayMesh_ewtxd")
+skeleton = NodePath("")
+
+[node name="天花-Wooden_Facade_vlptbfb" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -1, 8.742278e-08, 0, -8.742278e-08, -1, 0, 1.7199999, 0)
+mesh = SubResource("ArrayMesh_x8ak2")
+skeleton = NodePath("")
+
+[node name="天花-Wooden_Floor_vl0mbenn" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -1, 8.742278e-08, 0, -8.742278e-08, -1, 0, 1.7199999, 0)
+mesh = SubResource("ArrayMesh_igy1v")
+skeleton = NodePath("")

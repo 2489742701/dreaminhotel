@@ -1,0 +1,66 @@
+[gd_scene load_steps=8 format=3 uid="uid://bod22fft503oo"]
+
+[ext_resource type="Texture2D" uid="uid://4ufgqake1h3s" path="res://assets/world/hotel/ground/地板_0.jpg" id="1_kj5l7"]
+[ext_resource type="Texture2D" uid="uid://068i3gb0gkt7" path="res://assets/world/hotel/ground/地板_1.jpg" id="2_22c24"]
+[ext_resource type="Texture2D" uid="uid://dwjbxvc5tjcul" path="res://assets/world/hotel/ground/地板_2.jpg" id="3_4g1p2"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_03i4i"]
+resource_name = "Wooden_Planks_wczjegqs"
+albedo_color = Color(0.9063318, 0.9063318, 0.9063318, 1)
+albedo_texture = ExtResource("1_kj5l7")
+metallic = 1.0
+metallic_texture = ExtResource("2_22c24")
+metallic_texture_channel = 2
+roughness_texture = ExtResource("2_22c24")
+roughness_texture_channel = 1
+emission_enabled = true
+normal_enabled = true
+normal_texture = ExtResource("3_4g1p2")
+texture_filter = 1
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_x33ce"]
+_surfaces = [{
+"aabb": AABB(-2.3613276, -0.81, -2.253853, 4.7226553, 1e-05, 4.507706),
+"format": 34896613377,
+"index_count": 6,
+"index_data": PackedByteArray(0, 0, 1, 0, 2, 0, 2, 0, 1, 0, 3, 0),
+"name": "Wooden_Planks_wczjegqs",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 4,
+"vertex_data": PackedByteArray(0, 0, 0, 0, 255, 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 255, 255, 0, 0, 255, 255, 0, 0, 255, 255, 0, 0, 0, 0, 0, 0)
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_kj5l7"]
+resource_name = "地板_地板_1-Wooden_Planks_wczjegqs"
+_surfaces = [{
+"aabb": AABB(-2.3613276, -0.81, -2.253853, 4.7226553, 1e-05, 4.507706),
+"attribute_data": PackedByteArray(255, 127, 255, 127, 255, 127, 255, 255, 255, 255, 255, 127, 255, 255, 255, 255),
+"format": 34896613399,
+"index_count": 6,
+"index_data": PackedByteArray(0, 0, 1, 0, 2, 0, 2, 0, 1, 0, 3, 0),
+"material": SubResource("StandardMaterial3D_03i4i"),
+"name": "Wooden_Planks_wczjegqs",
+"primitive": 3,
+"uv_scale": Vector4(33.333336, 22.222221, 0, 0),
+"vertex_count": 4,
+"vertex_data": PackedByteArray(0, 0, 0, 0, 255, 255, 255, 63, 0, 0, 0, 0, 0, 0, 255, 63, 255, 255, 0, 0, 255, 255, 255, 63, 255, 255, 0, 0, 0, 0, 255, 63, 255, 255, 255, 127, 255, 255, 255, 127, 255, 255, 255, 127, 255, 255, 255, 127)
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_x33ce")
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_kj5l7"]
+points = PackedVector3Array(-2.3613276, -0.81, -2.253853, -2.3613276, -0.81, 2.253853, 2.3613276, -0.81, -2.253853, 2.3613276, -0.81, 2.253853)
+
+[node name="Ground" type="Node3D"]
+
+[node name="Ground" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.099999964, 0, 0, 0, 1, 0.02000001, 0, -0.19000001)
+mesh = SubResource("ArrayMesh_kj5l7")
+skeleton = NodePath("")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Ground"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Ground/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_kj5l7")

@@ -1,8 +1,19 @@
-[gd_scene load_steps=9 format=4 uid="uid://dgkkivqmjks8o"]
+[gd_scene load_steps=35 format=4 uid="uid://dgkkivqmjks8o"]
 
-[ext_resource type="Script" path="res://scripts/world/doorcontrol.gd" id="1_ushvo"]
+[ext_resource type="Script" uid="uid://bys6sjbritmk6" path="res://scripts/world/doorcontrol.gd" id="1_ushvo"]
+[ext_resource type="Texture2D" uid="uid://brauvy17u5gi6" path="res://assets/world/Build/Seal/木板组_0.jpg" id="2_jbc5w"]
+[ext_resource type="Texture2D" uid="uid://dvln6uik66277" path="res://assets/world/Build/Seal/木板组_1.jpg" id="3_3nwhq"]
+[ext_resource type="Texture2D" uid="uid://jbsrljc0uit7" path="res://assets/world/Build/Seal/木板组_2.jpg" id="4_r8cbw"]
+[ext_resource type="Texture2D" uid="uid://btdfdqj27n6qn" path="res://assets/world/Build/Seal/木板组_3.jpg" id="5_1d45p"]
+[ext_resource type="Texture2D" uid="uid://bj05svgo2n03j" path="res://assets/world/Build/Seal/木板组_4.jpg" id="6_pje58"]
+[ext_resource type="Texture2D" uid="uid://ppn1f1hgjat5" path="res://assets/world/Build/Seal/木板组_5.jpg" id="7_nbsnm"]
+[ext_resource type="Texture2D" uid="uid://icsvroj0f85v" path="res://assets/world/Build/Seal/木板组_6.jpg" id="8_32e6d"]
+[ext_resource type="Texture2D" uid="uid://c1najnvpe2sx4" path="res://assets/world/Build/Seal/木板组_7.jpg" id="9_r072a"]
+[ext_resource type="Texture2D" uid="uid://ds8wvsd8tuklu" path="res://assets/world/Build/Seal/木板组_8.jpg" id="10_v1jku"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_ushvo"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jbc5w"]
 
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_j4q6d"]
 points = PackedVector3Array(0.3179378, 0.6354057, 0.029771425, -0.31746793, -0.6354057, -0.06953016, -0.31746793, -0.6354057, 0.029771425, -0.31746793, 0.6354057, -0.06953016, 0.3179378, -0.6354057, -0.06953016, 0.3179378, -0.6354057, 0.029771425, -0.31746793, 0.6354057, 0.029771425, 0.3179378, 0.6354057, -0.06953016)
@@ -13,7 +24,7 @@ size = Vector3(0.9217682, 1, 1)
 [sub_resource type="BoxShape3D" id="BoxShape3D_j4q6d"]
 size = Vector3(0.98236084, 0.9864502, 1)
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_f5llm"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3nwhq"]
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_df610"]
 _surfaces = [{
@@ -21,6 +32,7 @@ _surfaces = [{
 "format": 34896613377,
 "index_count": 144,
 "index_data": PackedByteArray("AAABAAIAAgABAAMAAAAEAAEAAgAFAAAABAAGAAEABwAEAAAABgAIAAEAAQAIAAMACQAGAAQAAAAFAAoAAAAKAAcABAAHAAsACwAJAAQABwAKAAwACwAHAA0ABwAMAA0ADQADAAsAAgADAA0AAwAOAAsADgAJAAsACAAOAAMADQAPAAIADQAMAA8AAgAPAAUADgAQAAkACAARAA4AEQAQAA4AEgARAAgABgASAAgACQATAAYAEwASAAYAEAATAAkAFAARABIADwAUAAUAFQAQABEAFQARABQAFQAUAA8ADAAVAA8AEgAWABQAFAAWAAUAEwAWABIABQAWAAoAFwATABAAFwAQABUAFgATABcAFwAVAAwAFgAXAAoACgAXAAwA"),
+"material": SubResource("StandardMaterial3D_3nwhq"),
 "primitive": 3,
 "uv_scale": Vector4(0, 0, 0, 0),
 "vertex_count": 24,
@@ -36,7 +48,6 @@ _surfaces = [{
 "format": 34896613399,
 "index_count": 144,
 "index_data": PackedByteArray("AAABAAIAAgABAAMAAAAEAAEAAgADAAUABgAEAAAABQADAAcABAAGAAcABwAGAAUACAAJAAoACwAJAAwADQAJAAsACgAJAA0ADgANAA8AEAAKABEACAAKABAAEgANAA4AEwAIABQAFQAIABMACgANABYAFgANABIACgAWABcAFwAWABgAEgAVABYAFgAVABkAGQAVABoAFQAbAAgAGwAVABIACAAbAAkACQAbABwAHAAbAB0AGwASAB4AHgASAB8AIAAhACIAIgAhACMAJAAlACYAJgAlACcAKAApACoAKgApACsALAAtAC4ALgAtAC8AMAAxADIAMgAxADMANAA1ADYANgA1ADcAOAA5ADoAOgA5ADsAPAA9AD4APgA9AD8A"),
-"material": SubResource("StandardMaterial3D_f5llm"),
 "primitive": 3,
 "uv_scale": Vector4(0, 0, 0, 0),
 "vertex_count": 64,
@@ -44,6 +55,244 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_df610")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_r8cbw"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8iifq"]
+resource_name = "Wooden_Floor_vl0mbenn"
+albedo_color = Color(0.9063318, 0.9063318, 0.9063318, 1)
+albedo_texture = ExtResource("2_jbc5w")
+metallic = 1.0
+metallic_texture = ExtResource("3_3nwhq")
+metallic_texture_channel = 2
+roughness_texture = ExtResource("3_3nwhq")
+roughness_texture_channel = 1
+emission_enabled = true
+normal_enabled = true
+normal_texture = ExtResource("4_r8cbw")
+texture_filter = 1
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_w2idp"]
+_surfaces = [{
+"aabb": AABB(-0.37324724, -0.02839887, -0.009274317, 0.7464945, 0.05679774, 0.018548634),
+"format": 34896613377,
+"index_count": 36,
+"index_data": PackedByteArray("AAABAAIAAQAAAAMAAgABAAQAAwAAAAUAAAACAAUABgABAAMABAABAAYABQAGAAMAAgAEAAcABQACAAcABwAEAAYABwAGAAUA"),
+"name": "Wooden_Floor_vl0mbenn",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 8,
+"vertex_data": PackedByteArray("//8AAAAAAAAAAAAAAAAAAP//AAD//wAAAAD//wAAAAAAAAAA//8AAP////8AAAAAAAD/////AAD///////8AAA==")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_x3yde"]
+resource_name = "木板组_木板_5"
+_surfaces = [{
+"aabb": AABB(-0.37324724, -0.02839887, -0.009274317, 0.7464945, 0.05679774, 0.018548634),
+"attribute_data": PackedByteArray("//////9///////9//3//f///////f///////f/9//3///////3///////3//f/9///////9///////9//3//f///////f///////f/9//3///////3///////3//f/9/"),
+"format": 34896613399,
+"index_count": 36,
+"index_data": PackedByteArray("AAABAAIAAgABAAMABAAFAAYABgAFAAcACAAJAAoACgAJAAsADAANAA4ADgANAA8AEAARABIAEgARABMAFAAVABYAFgAVABcA"),
+"material": SubResource("StandardMaterial3D_8iifq"),
+"name": "Wooden_Floor_vl0mbenn",
+"primitive": 3,
+"uv_scale": Vector4(3.030303, 0.71684587, 0, 0),
+"vertex_count": 24,
+"vertex_data": PackedByteArray("//8AAAAA/78AAAAAAAD/v///AAD///+/AAAAAP///7//////////vwAA//////+//////wAA/78AAP//AAD/vwAAAAD///+/AAAAAAAA/78AAP//////vwAA//8AAP+/AAAAAAAA/////wAAAAD//wAA//8AAP///////wAA/////wAAAAD/v///AAD///+//////wAA/7//////////v///AAD//wCAAAAAAP//AID///////8AgAAA/////wCAAAD/fwAA/38AAP9/AAD/f////3////9/////f////3//f////3////9/////f////3////9/////f////3////9/AAD/fwAA/38AAP9/AAD/f////3////9/////f///")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_w2idp")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_54fim"]
+resource_name = "Wooden_Facade_vlptbfb"
+cull_mode = 2
+albedo_color = Color(0.9063318, 0.9063318, 0.9063318, 1)
+albedo_texture = ExtResource("5_1d45p")
+metallic = 1.0
+metallic_texture = ExtResource("6_pje58")
+metallic_texture_channel = 2
+roughness_texture = ExtResource("6_pje58")
+roughness_texture_channel = 1
+emission_enabled = true
+normal_enabled = true
+normal_texture = ExtResource("7_nbsnm")
+texture_filter = 1
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_5di1p"]
+_surfaces = [{
+"aabb": AABB(-0.37324724, -0.064764224, -0.009274317, 0.7464945, 0.12952845, 0.018548634),
+"format": 34896613377,
+"index_count": 36,
+"index_data": PackedByteArray("AAABAAIAAQAAAAMAAgABAAQAAwAAAAUAAAACAAUABgABAAMABAABAAYABQAGAAMAAgAEAAcABQACAAcABwAEAAYABwAGAAUA"),
+"name": "Wooden_Facade_vlptbfb",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 8,
+"vertex_data": PackedByteArray("//8AAAAAAAAAAAAAAAAAAP//AAD//wAAAAD//wAAAAAAAAAA//8AAP////8AAAAAAAD/////AAD///////8AAA==")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_elo47"]
+resource_name = "木板组_木板_4"
+_surfaces = [{
+"aabb": AABB(-0.37324724, -0.064764224, -0.009274317, 0.7464945, 0.12952845, 0.018548634),
+"attribute_data": PackedByteArray("//////9///////9//3//f///////f///////f/9//3///////3///////3//f/9///////9///////9//3//f///////f///////f/9//3///////3///////3//f/9/"),
+"format": 34896613399,
+"index_count": 36,
+"index_data": PackedByteArray("AAABAAIAAgABAAMABAAFAAYABgAFAAcACAAJAAoACgAJAAsADAANAA4ADgANAA8AEAARABIAEgARABMAFAAVABYAFgAVABcA"),
+"material": SubResource("StandardMaterial3D_54fim"),
+"name": "Wooden_Facade_vlptbfb",
+"primitive": 3,
+"uv_scale": Vector4(3.7037036, 2.1276596, 0, 0),
+"vertex_count": 24,
+"vertex_data": PackedByteArray("//8AAAAA/78AAAAAAAD/v///AAD///+/AAAAAP///7//////////vwAA//////+//////wAA/78AAP//AAD/vwAAAAD///+/AAAAAAAA/78AAP//////vwAA//8AAP+/AAAAAAAA/////wAAAAD//wAA//8AAP///////wAA/////wAAAAD/v///AAD///+//////wAA/7//////////v///AAD//wCAAAAAAP//AID///////8AgAAA/////wCAAAD/fwAA/38AAP9/AAD/f////3////9/////f////3//f////3////9/////f////3////9/////f////3////9/AAD/fwAA/38AAP9/AAD/f////3////9/////f///")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_5di1p")
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_m4ots"]
+_surfaces = [{
+"aabb": AABB(-0.37324724, -0.02839887, -0.009274317, 0.7464945, 0.05679774, 0.018548634),
+"format": 34896613377,
+"index_count": 36,
+"index_data": PackedByteArray("AAABAAIAAQAAAAMAAgABAAQAAwAAAAUAAAACAAUABgABAAMABAABAAYABQAGAAMAAgAEAAcABQACAAcABwAEAAYABwAGAAUA"),
+"name": "Wooden_Facade_vlptbfb",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 8,
+"vertex_data": PackedByteArray("//8AAAAAAAAAAAAAAAAAAP//AAD//wAAAAD//wAAAAAAAAAA//8AAP////8AAAAAAAD/////AAD///////8AAA==")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_7xqr4"]
+resource_name = "木板组_木板_3"
+_surfaces = [{
+"aabb": AABB(-0.37324724, -0.02839887, -0.009274317, 0.7464945, 0.05679774, 0.018548634),
+"attribute_data": PackedByteArray("//////9///////9//3//f///////f///////f/9//3///////3///////3//f/9///////9///////9//3//f///////f///////f/9//3///////3///////3//f/9/"),
+"format": 34896613399,
+"index_count": 36,
+"index_data": PackedByteArray("AAABAAIAAgABAAMABAAFAAYABgAFAAcACAAJAAoACgAJAAsADAANAA4ADgANAA8AEAARABIAEgARABMAFAAVABYAFgAVABcA"),
+"material": SubResource("StandardMaterial3D_54fim"),
+"name": "Wooden_Facade_vlptbfb",
+"primitive": 3,
+"uv_scale": Vector4(3.7037036, 2.1276596, 0, 0),
+"vertex_count": 24,
+"vertex_data": PackedByteArray("//8AAAAA/78AAAAAAAD/v///AAD///+/AAAAAP///7//////////vwAA//////+//////wAA/78AAP//AAD/vwAAAAD///+/AAAAAAAA/78AAP//////vwAA//8AAP+/AAAAAAAA/////wAAAAD//wAA//8AAP///////wAA/////wAAAAD/v///AAD///+//////wAA/7//////////v///AAD//wCAAAAAAP//AID///////8AgAAA/////wCAAAD/fwAA/38AAP9/AAD/f////3////9/////f////3//f////3////9/////f////3////9/////f////3////9/AAD/fwAA/38AAP9/AAD/f////3////9/////f///")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_m4ots")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8axan"]
+resource_name = "Wooden_Planks_wczjegqs"
+cull_mode = 2
+albedo_color = Color(0.9063318, 0.9063318, 0.9063318, 1)
+albedo_texture = ExtResource("8_32e6d")
+metallic = 1.0
+metallic_texture = ExtResource("9_r072a")
+metallic_texture_channel = 2
+roughness_texture = ExtResource("9_r072a")
+roughness_texture_channel = 1
+emission_enabled = true
+normal_enabled = true
+normal_texture = ExtResource("10_v1jku")
+texture_filter = 1
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_7lccr"]
+_surfaces = [{
+"aabb": AABB(-0.37324724, -0.02839887, -0.009274317, 0.7464945, 0.05679774, 0.018548634),
+"format": 34896613377,
+"index_count": 36,
+"index_data": PackedByteArray("AAABAAIAAQAAAAMAAgABAAQAAwAAAAUAAAACAAUABgABAAMABAABAAYABQAGAAMAAgAEAAcABQACAAcABwAEAAYABwAGAAUA"),
+"name": "Wooden_Planks_wczjegqs",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 8,
+"vertex_data": PackedByteArray("//8AAAAAAAAAAAAAAAAAAP//AAD//wAAAAD//wAAAAAAAAAA//8AAP////8AAAAAAAD/////AAD///////8AAA==")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_fs7th"]
+resource_name = "木板组_木板_2"
+_surfaces = [{
+"aabb": AABB(-0.37324724, -0.02839887, -0.009274317, 0.7464945, 0.05679774, 0.018548634),
+"attribute_data": PackedByteArray("fkIoQAAAKEB+QgAAAAAAAH5CKEAAAChAfkIAAAAAAAB+QihAAAAoQH5CAAAAAAAAfkIoQAAAKEB+QgAAAAAAAH5CKEAAAChAfkIAAAAAAAB+QihAAAAoQH5CAAAAAAAA"),
+"format": 34896613399,
+"index_count": 36,
+"index_data": PackedByteArray("AAABAAIAAgABAAMABAAFAAYABgAFAAcACAAJAAoACgAJAAsADAANAA4ADgANAA8AEAARABIAEgARABMAFAAVABYAFgAVABcA"),
+"material": SubResource("StandardMaterial3D_8axan"),
+"name": "Wooden_Planks_wczjegqs",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 24,
+"vertex_data": PackedByteArray("//8AAAAA/78AAAAAAAD/v///AAD///+/AAAAAP///7//////////vwAA//////+//////wAA/78AAP//AAD/vwAAAAD///+/AAAAAAAA/78AAP//////vwAA//8AAP+/AAAAAAAA/////wAAAAD//wAA//8AAP///////wAA/////wAAAAD/v///AAD///+//////wAA/7//////////v///AAD//wCAAAAAAP//AID///////8AgAAA/////wCAAAD/fwAA/38AAP9/AAD/f////3////9/////f////3//f////3////9/////f////3////9/////f////3////9/AAD/fwAA/38AAP9/AAD/f////3////9/////f///")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_7lccr")
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_fo75d"]
+_surfaces = [{
+"aabb": AABB(-0.37324724, -0.035724822, -0.009274317, 0.7464945, 0.071449645, 0.018548634),
+"format": 34896613377,
+"index_count": 36,
+"index_data": PackedByteArray("AAABAAIAAQAAAAMAAgABAAQAAwAAAAUAAAACAAUABgABAAMABAABAAYABQAGAAMAAgAEAAcABQACAAcABwAEAAYABwAGAAUA"),
+"name": "Wooden_Planks_wczjegqs",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 8,
+"vertex_data": PackedByteArray("//8AAAAAAAAAAAAAAAAAAP//AAD//wAAAAD//wAAAAAAAAAA//8AAP////8AAAAAAAD/////AAD///////8AAA==")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_gm62v"]
+resource_name = "木板组_木板_1"
+_surfaces = [{
+"aabb": AABB(-0.37324724, -0.035724822, -0.009274317, 0.7464945, 0.071449645, 0.018548634),
+"attribute_data": PackedByteArray("//////9///////9//3//f///////f///////f/9//3///////3///////3//f/9///////9///////9//3//f///////f///////f/9//3///////3///////3//f/9/"),
+"format": 34896613399,
+"index_count": 36,
+"index_data": PackedByteArray("AAABAAIAAgABAAMABAAFAAYABgAFAAcACAAJAAoACgAJAAsADAANAA4ADgANAA8AEAARABIAEgARABMAFAAVABYAFgAVABcA"),
+"material": SubResource("StandardMaterial3D_8axan"),
+"name": "Wooden_Planks_wczjegqs",
+"primitive": 3,
+"uv_scale": Vector4(3.773585, 0.77821016, 0, 0),
+"vertex_count": 24,
+"vertex_data": PackedByteArray("//8AAAAA/78AAAAAAAD/v///AAD///+/AAAAAP///7//////////vwAA//////+//////wAA/78AAP//AAD/vwAAAAD///+/AAAAAAAA/78AAP//////vwAA//8AAP+/AAAAAAAA/////wAAAAD//wAA//8AAP///////wAA/////wAAAAD/v///AAD///+//////wAA/7//////////v///AAD//wCAAAAAAP//AID///////8AgAAA/////wCAAAD/fwAA/38AAP9/AAD/f////3////9/////f////3//f////3////9/////f////3////9/////f////3////9/AAD/fwAA/38AAP9/AAD/f////3////9/////f///")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_fo75d")
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_ev7gs"]
+_surfaces = [{
+"aabb": AABB(-0.37324724, -0.064764224, -0.009274317, 0.7464945, 0.12952845, 0.018548634),
+"format": 34896613377,
+"index_count": 36,
+"index_data": PackedByteArray("AAABAAIAAQAAAAMAAgABAAQAAwAAAAUAAAACAAUABgABAAMABAABAAYABQAGAAMAAgAEAAcABQACAAcABwAEAAYABwAGAAUA"),
+"name": "Wooden_Floor_vl0mbenn",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 8,
+"vertex_data": PackedByteArray("//8AAAAAAAAAAAAAAAAAAP//AAD//wAAAAD//wAAAAAAAAAA//8AAP////8AAAAAAAD/////AAD///////8AAA==")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_iv4xv"]
+resource_name = "木板组_木板"
+_surfaces = [{
+"aabb": AABB(-0.37324724, -0.064764224, -0.009274317, 0.7464945, 0.12952845, 0.018548634),
+"attribute_data": PackedByteArray("//////9///////9//3//f///////f///////f/9//3///////3///////3//f/9///////9///////9//3//f///////f///////f/9//3///////3///////3//f/9/"),
+"format": 34896613399,
+"index_count": 36,
+"index_data": PackedByteArray("AAABAAIAAgABAAMABAAFAAYABgAFAAcACAAJAAoACgAJAAsADAANAA4ADgANAA8AEAARABIAEgARABMAFAAVABYAFgAVABcA"),
+"material": SubResource("StandardMaterial3D_8iifq"),
+"name": "Wooden_Floor_vl0mbenn",
+"primitive": 3,
+"uv_scale": Vector4(3.030303, 0.71684587, 0, 0),
+"vertex_count": 24,
+"vertex_data": PackedByteArray("//8AAAAA/78AAAAAAAD/v///AAD///+/AAAAAP///7//////////vwAA//////+//////wAA/78AAP//AAD/vwAAAAD///+/AAAAAAAA/78AAP//////vwAA//8AAP+/AAAAAAAA/////wAAAAD//wAA//8AAP///////wAA/////wAAAAD/v///AAD///+//////wAA/7//////////v///AAD//wCAAAAAAP//AID///////8AgAAA/////wCAAAD/fwAA/38AAP9/AAD/f////3////9/////f////3//f////3////9/////f////3////9/////f////3////9/AAD/fwAA/38AAP9/AAD/f////3////9/////f///")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_ev7gs")
 
 [node name="Doorcontrol" type="Node3D"]
 transform = Transform3D(0.99999994, 0, 0, 0, 1, 0, 0, 0, 0.99999994, 0, 0, 0)
@@ -56,22 +305,27 @@ transform = Transform3D(0.9999997, 0, 0, 0, 1, 0, 0, 0, 0.9999997, -0.008096183,
 transform = Transform3D(0.6242322, 0, 0, 0, 1.2499993, 0, 0, 0, 0.02708767, 0.29969898, 0.568796, -0.0022339057)
 mesh = SubResource("BoxMesh_ushvo")
 skeleton = NodePath("")
+surface_material_override/0 = SubResource("StandardMaterial3D_jbc5w")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="DoorMesh/门"]
 transform = Transform3D(1.6160268, 0, 0, 0, 0.80000037, 0, 0, 0, 4.302176, 0, 0, 0.4367238)
+collision_layer = 2
+collision_mask = 2
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="DoorMesh/门/StaticBody3D"]
 shape = SubResource("ConvexPolygonShape3D_j4q6d")
 
 [node name="Tips" type="Label3D" parent="DoorMesh"]
-transform = Transform3D(0.9999998, 0, 0.0005934119, 0, 1, 0, -0.0005934119, 0, 0.9999998, 0.47067037, 0.66730696, 0.03269422)
+transform = Transform3D(0.9999998, 0, 0.0005934119, 0, 1, 0, -0.0005934119, 0, 0.9999998, 0.30286068, 0.7168726, 0.07611383)
+visible = false
 gi_lightmap_texel_scale = 8.0
 gi_lightmap_scale = 3
 pixel_size = 0.002
-modulate = Color(0.9018896, 0.83278227, 0.6831861, 0)
+modulate = Color(0, 0.6806038, 0.5854748, 0)
+outline_modulate = Color(0, 0, 0, 0)
 text = "文本自动"
 font_size = 30
-outline_size = 0
+outline_size = 20
 language = "zh_CN"
 
 [node name="LabelPurpose" type="Label3D" parent="DoorMesh"]
@@ -83,6 +337,19 @@ pixel_size = 0.001
 text = "档案室"
 font_size = 52
 outline_size = 7
+
+[node name="Tips2" type="Label3D" parent="DoorMesh"]
+transform = Transform3D(-0.99999964, 0, 0.00083772733, 0, 1, 0, -0.00083772733, 0, -0.99999964, 0.30286068, 0.7168726, -0.066990584)
+visible = false
+gi_lightmap_texel_scale = 8.0
+gi_lightmap_scale = 3
+pixel_size = 0.002
+modulate = Color(0, 0.6806038, 0.5854748, 0)
+outline_modulate = Color(0, 0, 0, 0)
+text = "文本自动"
+font_size = 30
+outline_size = 20
+language = "zh_CN"
 
 [node name="inarea" type="Area3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.2709701, 0.67190254, 0.5231162)
@@ -104,4 +371,83 @@ shape = SubResource("BoxShape3D_j4q6d")
 [node name="门框" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.27846014, 0.7049275, -0.01599598)
 mesh = SubResource("ArrayMesh_ol3va")
+skeleton = NodePath("")
+surface_material_override/0 = SubResource("StandardMaterial3D_r8cbw")
+
+[node name="Out木板组" type="Node3D" parent="."]
+transform = Transform3D(0.99999976, 0, 0, 0, 1, 0, 0, 0, 0.99999976, 0.2741299, 0.73212284, -0.074382044)
+
+[node name="木板_5" type="MeshInstance3D" parent="Out木板组"]
+transform = Transform3D(0.98876494, 0.14947876, 0, -0.14947876, 0.98876494, 0, 0, 0, 1, 1.3642421e-15, 0.39937583, 0)
+visible = false
+mesh = SubResource("ArrayMesh_x3yde")
+skeleton = NodePath("")
+
+[node name="木板_4" type="MeshInstance3D" parent="Out木板组"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.3642421e-15, -0.40063655, 0)
+visible = false
+mesh = SubResource("ArrayMesh_elo47")
+skeleton = NodePath("")
+
+[node name="木板_3" type="MeshInstance3D" parent="Out木板组"]
+transform = Transform3D(0.98585004, 0.1676299, 0, -0.1676299, 0.98585004, 0, 0, 0, 1, 1.3642421e-15, -0.078799635, 0)
+visible = false
+mesh = SubResource("ArrayMesh_7xqr4")
+skeleton = NodePath("")
+
+[node name="木板_2" type="MeshInstance3D" parent="Out木板组"]
+transform = Transform3D(0.9966608, -0.081653126, 0, 0.081653126, 0.9966608, 0, 0, 0, 1, 1.3642421e-15, -0.2444993, 0)
+visible = false
+mesh = SubResource("ArrayMesh_fs7th")
+skeleton = NodePath("")
+
+[node name="木板_1" type="MeshInstance3D" parent="Out木板组"]
+transform = Transform3D(0.9965835, -0.082591146, 0, 0.082591146, 0.9965835, 0, 0, 0, 1, 1.3642421e-15, 0.23735513, 0)
+visible = false
+mesh = SubResource("ArrayMesh_gm62v")
+skeleton = NodePath("")
+
+[node name="木板" type="MeshInstance3D" parent="Out木板组"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.3642421e-15, 0.087204546, 0)
+visible = false
+mesh = SubResource("ArrayMesh_iv4xv")
+skeleton = NodePath("")
+
+[node name="in木板组" type="Node3D" parent="."]
+transform = Transform3D(0.9999993, 0, 0, 0, 1, 0, 0, 0, 0.9999993, 0.3056854, 0.7687179, 0.035833508)
+
+[node name="木板_5" type="MeshInstance3D" parent="in木板组"]
+transform = Transform3D(0.98876494, 0.14947876, 0, -0.14947876, 0.98876494, 0, 0, 0, 1, 1.3642421e-15, 0.39937583, 0)
+visible = false
+mesh = SubResource("ArrayMesh_x3yde")
+skeleton = NodePath("")
+
+[node name="木板_4" type="MeshInstance3D" parent="in木板组"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.3642421e-15, -0.40063655, 0)
+visible = false
+mesh = SubResource("ArrayMesh_elo47")
+skeleton = NodePath("")
+
+[node name="木板_3" type="MeshInstance3D" parent="in木板组"]
+transform = Transform3D(0.98585004, 0.1676299, 0, -0.1676299, 0.98585004, 0, 0, 0, 1, 1.3642421e-15, -0.078799635, 0)
+visible = false
+mesh = SubResource("ArrayMesh_7xqr4")
+skeleton = NodePath("")
+
+[node name="木板_2" type="MeshInstance3D" parent="in木板组"]
+transform = Transform3D(0.9966608, -0.081653126, 0, 0.081653126, 0.9966608, 0, 0, 0, 1, 1.3642421e-15, -0.2444993, 0)
+visible = false
+mesh = SubResource("ArrayMesh_fs7th")
+skeleton = NodePath("")
+
+[node name="木板_1" type="MeshInstance3D" parent="in木板组"]
+transform = Transform3D(0.9965835, -0.082591146, 0, 0.082591146, 0.9965835, 0, 0, 0, 1, 1.3642421e-15, 0.23735513, 0)
+visible = false
+mesh = SubResource("ArrayMesh_gm62v")
+skeleton = NodePath("")
+
+[node name="木板" type="MeshInstance3D" parent="in木板组"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.3642421e-15, 0.087204546, 0)
+visible = false
+mesh = SubResource("ArrayMesh_iv4xv")
 skeleton = NodePath("")

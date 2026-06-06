@@ -1,0 +1,237 @@
+🧩 问题一：怪物为什么会跑到导航网格外面，然后卡死？
+🔍 根本原因
+巡逻模式下没有强制返回导航区域的机制。
+你的 check_scene_boundary() 仅在 was_chasing == true 时才会引导怪物回导航区域。
+但在普通巡逻模式下，was_chasing 为 false，即使怪物走出导航网格，也不会触发返回逻辑。
+
+结果：
+
+怪物继续尝试走向巡逻点（目标点可能在导航网格内）。
+
+导航代理发现当前点和目标点之间没有可行路径（因为怪物本身不在导航网格上）。
+
+get_patrol_direction() 调用 navigation_agent.get_next_path_position() 返回无效位置，方向计算为 Vector3.ZERO。
+
+怪物水平速度归零，停在外面，看起来就像卡死。
+
+✅ 解决方案：无论任何状态，一旦走出导航网格，立即强制返回
+修改 check_scene_boundary()，统一处理导航区域外的情况：
+
+gdscript
+func check_scene_boundary():
+	if not navigation_region:
+		return
+	
+	var map_rid = navigation_region.get_navigation_map()
+	var closest_point = NavigationServer3D.map_get_closest_point(map_rid, global_position)
+	var distance_to_nav = global_position.distance_to(closest_point)
+	var in_region = distance_to_nav < 1.0
+	
+	if not in_region:
+		# 不管是不是追击状态，只要在外面，就强制引导回导航区域
+		is_outside_scene = true
+		outside_scene_timer += scene_boundary_check_interval
+		
+		# 新增：强制临时切换目标为最近导航点
+		if current_state != State.NAVIGATION and not is_returning_to_patrol:
+			# 记录当前目标，回到导航区域后恢复
+			last_valid_target = target_position if target_position else global_position
+			# 强制设置导航代理目标为最近导航点
+			navigation_agent.set_target_position(closest_point)
+			is_returning_to_patrol = true
+		
+		# 超时强制传送（建议保留，避免无限卡死）
+		if outside_scene_timer >= outside_scene_timeout:
+			print("[Monster] 超出导航区域过久，强制传送")
+			teleport_back_to_scene()
+			outside_scene_timer = 0.0
+	else:
+		if is_outside_scene:
+			# 成功回到导航区域，恢复巡逻/追击
+			is_outside_scene = false
+			outside_scene_timer = 0.0
+			is_returning_to_patrol = false
+			# 恢复之前的目标（如果是巡逻模式）
+			if last_valid_target:
+				navigation_agent.set_target_position(last_valid_target)
+				last_valid_target = null
+🧩 问题二：为什么怪物有时会“卡在巡逻点”无法移动？
+🔍 根本原因
+导航代理路径失效时没有回退方案。
+当你调用 get_patrol_direction() 或 get_navigation_direction() 时：
+
+gdscript
+var next_path_position = navigation_agent.get_next_path_position()
+var direction = (target_xz - global_position).normalized()
+如果导航代理没有有效路径（例如目标点被障碍物完全包围），get_next_path_position() 可能返回当前位置，导致 direction 为零向量，怪物原地不动。
+
+你当前的代码只依赖导航代理，没有 fallback 机制。
+而且你在 get_patrol_direction() 中检测到达巡逻点的条件是：
+
+gdscript
+if distance_to_target_xz < navigation_agent.target_desired_distance:
+    # 切换下一个巡逻点
+但如果没有路径，怪物永远无法“到达”，也就永远不会切换目标，彻底卡死。
+
+✅ 解决方案：路径无效时启用直线移动回退 + 超时强制切换目标
+在 get_patrol_direction() 和 get_navigation_direction() 中添加路径有效性检测：
+
+gdscript
+func get_patrol_direction(_delta: float) -> Vector3:
+	# ... 现有代码 ...
+	
+	# 检查导航代理是否真的有路径
+	if navigation_agent.is_navigation_finished():
+		# 路径无效或已完成，但尚未到达目标（逻辑矛盾）
+		# 启用直线移动回退
+		var current_target = patrol_points[current_patrol_index]
+		var direction_to_target = (current_target.global_position - global_position).normalized()
+		direction_to_target.y = 0
+		if direction_to_target.length() > 0.1:
+			# 强制重新生成路径
+			navigation_agent.set_target_position(current_target.global_position)
+			return direction_to_target
+		else:
+			# 已经非常近，直接切换目标
+			switch_to_next_patrol_point()
+			return Vector3.ZERO
+	
+	# 原有路径点获取逻辑
+	var next_path_position = navigation_agent.get_next_path_position()
+	# ... 计算方向 ...
+同样在 get_navigation_direction() 中增加类似 fallback。
+
+另一个关键点：在 get_patrol_direction() 中，你每次返回时都会重新计算方向，但并没有超时强制切换目标。
+可以增加一个 patrol_stuck_timer，如果怪物连续几秒未移动且未到达目标，则强制切换到下一个巡逻点。
+
+🧩 关于“绝对方向”的误解
+你当前脚本已经没有使用绝对方向了——所有移动方向都来自导航代理或目标点方向。
+用户提到的“绝对方向”可能是指旧版本代码中直接写死方向（如 Vector3.FORWARD），但现在已经修正。
+唯一可能残留绝对方向影子的地方是 get_random_wander_direction() 中的 generate_random_direction()，但这是随机的，不是绝对方向。
+
+📌 完整修复建议（可直接复制替换）
+1️⃣ 添加两个成员变量
+在脚本顶部 var ... 区域添加：
+
+gdscript
+var last_valid_target: Vector3            # 用于记录离开导航区域前的目标
+var patrol_stuck_timer: float = 0.0       # 巡逻卡死计时器
+var patrol_stuck_timeout: float = 5.0     # 5秒未接近目标则强制切换
+var last_distance_to_target: float = 0.0  # 上一帧到目标距离
+2️⃣ 重写 check_scene_boundary()（如上文）
+3️⃣ 增强 get_patrol_direction() 路径回退与卡死检测
+gdscript
+func get_patrol_direction(delta: float) -> Vector3:
+	if patrol_points.size() == 0:
+		return Vector3.ZERO
+	
+	var current_target = patrol_points[current_patrol_index]
+	
+	# 卡死检测：如果距离目标距离没有明显减少，计时器累加
+	var current_distance = global_position.distance_to(current_target.global_position)
+	if abs(current_distance - last_distance_to_target) < 0.05:
+		patrol_stuck_timer += delta
+	else:
+		patrol_stuck_timer = 0.0
+	last_distance_to_target = current_distance
+	
+	# 超时强制切换目标
+	if patrol_stuck_timer >= patrol_stuck_timeout:
+		print("[Monster] 巡逻卡死超时，强制切换到下一个巡逻点")
+		switch_to_next_patrol_point()
+		patrol_stuck_timer = 0.0
+		# 重新获取新目标
+		current_target = patrol_points[current_patrol_index]
+	
+	# 只在目标改变时设置导航目标
+	if last_patrol_target != current_target:
+		navigation_agent.set_target_position(current_target.global_position)
+		last_patrol_target = current_target
+	
+	# 检查导航代理是否有有效路径
+	if navigation_agent.is_navigation_finished():
+		# 没有路径，但尚未到达目标 → 启用直线移动
+		var direction_to_target = (current_target.global_position - global_position).normalized()
+		direction_to_target.y = 0
+		if direction_to_target.length() > 0.1:
+			# 强制刷新路径请求
+			navigation_agent.set_target_position(current_target.global_position)
+			return direction_to_target
+		else:
+			# 非常接近，直接判定到达
+			switch_to_next_patrol_point()
+			return Vector3.ZERO
+	
+	var next_path_position = navigation_agent.get_next_path_position()
+	var target_xz = Vector3(next_path_position.x, global_position.y, next_path_position.z)
+	var direction = (target_xz - global_position).normalized()
+	direction.y = 0
+	
+	# 检查是否到达当前巡逻点（XZ平面）
+	var distance_to_target_xz = Vector2(global_position.x, global_position.z).distance_to(
+		Vector2(current_target.global_position.x, current_target.global_position.z)
+	)
+	if distance_to_target_xz < navigation_agent.target_desired_distance:
+		switch_to_next_patrol_point()
+	
+	return direction
+
+func switch_to_next_patrol_point():
+	if patrol_points.size() == 0:
+		return
+	
+	# 根据方向更新索引
+	if patrol_forward:
+		current_patrol_index += 1
+	else:
+		current_patrol_index -= 1
+	
+	# 边界处理
+	if current_patrol_index >= patrol_points.size():
+		current_patrol_index = patrol_points.size() - 1
+		patrol_forward = false
+	elif current_patrol_index < 0:
+		current_patrol_index = 0
+		patrol_forward = true
+	
+	var next_target = patrol_points[current_patrol_index]
+	navigation_agent.set_target_position(next_target.global_position)
+	last_patrol_target = next_target
+	patrol_stuck_timer = 0.0
+	print("[Monster] 切换到巡逻点 ", current_patrol_index)
+4️⃣ 增强 get_navigation_direction() 路径回退
+gdscript
+func get_navigation_direction() -> Vector3:
+	if not navigation_agent or patrol_points.size() == 0:
+		return Vector3.ZERO
+	
+	var return_target = patrol_points[current_patrol_index]
+	
+	# 如果导航代理没有有效路径，直线移动回退
+	if navigation_agent.is_navigation_finished():
+		var direction_to_target = (return_target.global_position - global_position).normalized()
+		direction_to_target.y = 0
+		if direction_to_target.length() > 0.1:
+			navigation_agent.set_target_position(return_target.global_position)
+			return direction_to_target
+		else:
+			is_returning_to_patrol = false
+			change_state(State.WANDER)
+			return Vector3.ZERO
+	
+	var next_path_position = navigation_agent.get_next_path_position()
+	var target_xz = Vector3(next_path_position.x, global_position.y, next_path_position.z)
+	var direction = (target_xz - global_position).normalized()
+	direction.y = 0
+	
+	# 到达检测
+	var distance_to_target_xz = Vector2(global_position.x, global_position.z).distance_to(
+		Vector2(return_target.global_position.x, return_target.global_position.z)
+	)
+	if distance_to_target_xz < navigation_agent.target_desired_distance:
+		print("[Monster] 寻路 - 已到达巡逻点，切换到巡逻状态")
+		is_returning_to_patrol = false
+		change_state(State.WANDER)
+		return Vector3.ZERO
+	
+	return direction

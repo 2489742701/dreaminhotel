@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="Item" load_steps=6 format=3 uid="uid://dmstfnwfkabnf"]
+
+[ext_resource type="Script" uid="uid://bbvoofg1yra28" path="res://scripts/items/Item.gd" id="1_uath0"]
+[ext_resource type="ArrayMesh" uid="uid://rpoyeeyh6hyu" path="res://scenes/items/Tools/Fuzi.tres" id="2_ih03p"]
+[ext_resource type="Texture2D" uid="uid://b1gkp1d3mn1ui" path="res://resources/Icon/斧子_画板 1.png" id="2_n168a"]
+[ext_resource type="Resource" uid="uid://bm51munhivi88" path="res://resources/animations/axe_swing.tres" id="3_swing"]
+[ext_resource type="Resource" uid="uid://bsbp06lu7tyaq" path="res://resources/items/effects/AxeDoorBreakEffect.tres" id="4_attack"]
+
+[resource]
+script = ExtResource("1_uath0")
+"物品类型" = 3
+"名称翻译键" = "斧头"
+"描述翻译键" = "一把锋利的斧头，可以用来劈砍木板封印的门"
+"图标" = ExtResource("2_n168a")
+"模型" = ExtResource("2_ih03p")
+"手持动画" = ExtResource("3_swing")
+"武器攻击效果" = ExtResource("4_attack")

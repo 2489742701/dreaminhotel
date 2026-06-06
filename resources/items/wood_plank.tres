@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="Item" format=3 uid="uid://cwoodplank123"]
+
+[ext_resource type="Script" uid="uid://bbvoofg1yra28" path="res://scripts/items/Item.gd" id="1_wood"]
+[ext_resource type="ArrayMesh" uid="uid://dwufl50m77cdq" path="res://scenes/items/Wood/wood.tres" id="2_mesh"]
+
+[resource]
+script = ExtResource("1_wood")
+"物品类型" = 5
+"名称翻译键" = "木板"
+"描述翻译键" = "用于封门的木板，可以阻挡怪物"
+"模型" = ExtResource("2_mesh")
+"图标颜色" = Color(0.6, 0.4, 0.2, 1)

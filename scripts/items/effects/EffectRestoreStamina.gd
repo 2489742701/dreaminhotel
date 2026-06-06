@@ -24,7 +24,7 @@ extends ConsumableEffect
 # @export_range装饰器限制了值的范围，并设置步长为1
 # 这确保了percent值始终在合理范围内，防止设置过小或过大的值
 # 默认为20%，表示使用此效果会恢复玩家20%的最大体力
-@export_range(0,100,1) var percent := 20.0
+@export_range(0,100,1) var 恢复百分比 := 20.0
 
 # ========== 核心方法实现 ==========
 
@@ -39,7 +39,7 @@ func apply(_target: Node) -> void:
 	if _target.has_method("restore_stamina_percent"):
 		# 如果目标节点有该方法，调用它并传入体力恢复百分比
 		# 通常_target是玩家节点，玩家节点中应该实现了这个方法来处理体力恢复
-		_target.restore_stamina_percent(percent)
+		_target.restore_stamina_percent(恢复百分比)
 	else:
 		# 如果目标节点没有该方法，记录一个警告
 		# 警告不会导致游戏崩溃，但会在Godot的输出日志中显示

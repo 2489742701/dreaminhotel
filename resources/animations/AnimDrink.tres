@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="AnimDrink" load_steps=2 format=3 uid="uid://cmg1l6u5rnggo"]
+
+[ext_resource type="Script" uid="uid://bwxnasyjpv6h8" path="res://scripts/characters/animations/AnimDrink.gd" id="1_animdrink"]
+
+[resource]
+script = ExtResource("1_animdrink")
+"动画总时长" = 1.0
+"旋转角度" = 30.0
+"移动距离" = 0.2
+"杯子Z轴旋转" = 110.0
+"杯子Y轴旋转" = 35.0
+"停顿时间" = 0.8
+"举杯动作比例" = 0.3
+"杯子旋转比例" = 0.2
+"喝水动作比例" = 0.1
+"继续喝水比例" = 0.1
+"返回原位比例" = 0.2
+"向下移动比例" = 0.5
+"向上移动比例" = 0.7

@@ -1,0 +1,73 @@
+[gd_scene format=3 uid="uid://c2pkj2ixah0j8"]
+
+[ext_resource type="Script" uid="uid://de6e6v3piurin" path="res://scripts/items/droppable_item.gd" id="1_script"]
+[ext_resource type="Resource" uid="uid://cwoodplank123" path="res://resources/items/wood_plank.tres" id="2_item"]
+[ext_resource type="ArrayMesh" uid="uid://dwufl50m77cdq" path="res://scenes/items/Wood/wood.tres" id="3_mesh"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_pickup"]
+radius = 0.3
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_body"]
+radius = 0.15
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_wood"]
+spread = 180.0
+initial_velocity_max = 5.0
+gravity = Vector3(0, -2, 0)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wood"]
+emission_enabled = true
+emission = Color(0.6, 0.4, 0.2, 1)
+emission_energy_multiplier = 8.0
+
+[sub_resource type="SphereMesh" id="SphereMesh_wood"]
+material = SubResource("StandardMaterial3D_wood")
+radius = 0.008
+height = 0.016
+
+[node name="WoodPlankItem" type="RigidBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+gravity_scale = 0.0
+lock_rotation = true
+freeze = true
+freeze_mode = 1
+linear_damp = 2.0
+bounce = 0.5
+friction = 0.3
+script = ExtResource("1_script")
+"物品资源" = ExtResource("2_item")
+"模型资源" = ExtResource("3_mesh")
+
+[node name="刚体体积" type="CollisionShape3D" parent="."]
+shape = SubResource("SphereShape3D_body")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+mesh = ExtResource("3_mesh")
+
+[node name="Area3D" type="Area3D" parent="."]
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+shape = SubResource("SphereShape3D_pickup")
+
+[node name="dead" type="GPUParticles3D" parent="."]
+emitting = false
+amount = 50
+lifetime = 1.0
+one_shot = true
+explosiveness = 1.0
+visibility_aabb = AABB(-5, -5, -5, 10, 10, 10)
+local_coords = true
+process_material = SubResource("ParticleProcessMaterial_wood")
+draw_pass_1 = SubResource("SphereMesh_wood")
+
+[node name="always" type="GPUParticles3D" parent="."]
+emitting = false
+amount = 15
+lifetime = 3.0
+visibility_aabb = AABB(-5, -5, -5, 10, 10, 10)
+local_coords = true
+process_material = SubResource("ParticleProcessMaterial_wood")
+draw_pass_1 = SubResource("SphereMesh_wood")

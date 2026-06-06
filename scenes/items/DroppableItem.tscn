@@ -1,12 +1,17 @@
-[gd_scene load_steps=9 format=3 uid="uid://dib8ni1ajjmcm"]
+[gd_scene load_steps=12 format=3 uid="uid://dib8ni1ajjmcm"]
 
-[ext_resource type="Script" path="res://scripts/items/droppable_item.gd" id="1_j33ij"]
+[ext_resource type="Script" uid="uid://de6e6v3piurin" path="res://scripts/items/droppable_item.gd" id="1_j33ij"]
+[ext_resource type="Resource" uid="uid://dmstfnwfkabnf" path="res://resources/items/axe.tres" id="2_d8j56"]
+[ext_resource type="ArrayMesh" uid="uid://rpoyeeyh6hyu" path="res://scenes/items/Tools/Fuzi.tres" id="2_eornc"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_d8j56"]
+radius = 0.3
 
 [sub_resource type="BoxMesh" id="BoxMesh_j33ij"]
 size = Vector3(0.2, 0.2, 0.2)
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_j33ij"]
-radius = 0.50256795
+radius = 0.5
 
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_j33ij"]
 spread = 180.0
@@ -36,10 +41,23 @@ material = SubResource("StandardMaterial3D_7horr")
 radius = 0.005
 height = 0.01
 
-[node name="DroppableItem" type="Node3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.14988182, 0)
+[node name="DroppableItem" type="RigidBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.01999998, 0.5, 0.060000002)
+gravity_scale = 0.0
+lock_rotation = true
+freeze = true
+freeze_mode = 1
+linear_damp = 2.0
+bounce = 0.8
+friction = 0.1
 script = ExtResource("1_j33ij")
-mesh_resource = SubResource("BoxMesh_j33ij")
+"物品资源" = ExtResource("2_d8j56")
+"模型资源" = ExtResource("2_eornc")
+"模型缩放" = 2.5
+
+[node name="刚体体积" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.06999999, 0)
+shape = SubResource("SphereShape3D_d8j56")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 transform = Transform3D(0.42445835, 0, -0.9027395, 0, 1, 0, 0.9027395, 0, 0.42445835, 0, 0.088311985, 0)

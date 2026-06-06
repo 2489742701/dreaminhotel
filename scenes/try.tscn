@@ -1,50 +1,54 @@
-[gd_scene load_steps=12 format=3 uid="uid://17i3sb1jv3jn"]
+[gd_scene format=3 uid="uid://17i3sb1jv3jn"]
 
 [ext_resource type="PackedScene" uid="uid://ct153yfllniau" path="res://scenes/characters/player.tscn" id="1_4clcr"]
 [ext_resource type="PackedScene" uid="uid://ca4s2nuf2un7p" path="res://scenes/world/hotel/wall+door/door.tscn" id="2_cuwga"]
 [ext_resource type="PackedScene" uid="uid://dgkkivqmjks8o" path="res://scenes/world/hotel/wall+door/doorcontrol.tscn" id="3_hxww5"]
-[ext_resource type="PackedScene" uid="uid://qj1ixgemsy44" path="res://scenes/items/InventoryGUI3D.tscn" id="5_pk75k"]
+[ext_resource type="Resource" uid="uid://dy2yjwal0hpjs" path="res://resources/items/drink.tres" id="5_k2ww6"]
+[ext_resource type="Resource" uid="uid://c5xdi0k4bjgfx" path="res://resources/items/key1.tres" id="5_typn3"]
 [ext_resource type="PackedScene" uid="uid://dib8ni1ajjmcm" path="res://scenes/items/DroppableItem.tscn" id="6_gjy8r"]
-[ext_resource type="Resource" uid="uid://c5xdi0k4bjgfx" path="res://resources/items/key1.tres" id="7_1hdyn"]
-[ext_resource type="Resource" uid="uid://dy2yjwal0hpjs" path="res://resources/items/drink.tres" id="8_1hdyn"]
-[ext_resource type="Resource" uid="uid://bg6ky3qyfcwfe" path="res://resources/items/light.tres" id="8_k2ww6"]
+[ext_resource type="PackedScene" uid="uid://cte7ysweup25u" path="res://scenes/world/hotel/wall+door/wall/cellwall.tscn" id="9_typn3"]
+[ext_resource type="PackedScene" uid="uid://bod22fft503oo" path="res://scenes/world/hotel/wall+door/wall/Ground.tscn" id="9_x23tg"]
+[ext_resource type="PackedScene" uid="uid://bvphrhvedyf57" path="res://scenes/world/hotel/wall+door/wall/cell.tscn" id="10_x23tg"]
+[ext_resource type="PackedScene" uid="uid://t7wmupuwq4xs" path="res://内室测试.tscn" id="11_5il75"]
+[ext_resource type="PackedScene" uid="uid://dfhs1y8vrr27b" path="res://assets/monsters/MobA.tscn" id="13_5il75"]
+[ext_resource type="Resource" uid="uid://cwoodplank123" path="res://resources/items/wood_plank.tres" id="14_o4qw0"]
+[ext_resource type="PackedScene" uid="uid://o3x3kofum8u1" path="res://scenes/items/Tools/Fuzi.tscn" id="15_807so"]
+[ext_resource type="PackedScene" uid="uid://ii1bjs5ddcet" path="res://scenes/ui/crt_filter.tscn" id="16_crt"]
+
+[sub_resource type="Environment" id="Environment_cuwga"]
+ambient_light_source = 2
+ambient_light_energy = 16.0
 
 [sub_resource type="BoxMesh" id="BoxMesh_xii8n"]
 
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_4wvfy"]
 data = PackedVector3Array(-0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, -0.5)
 
-[sub_resource type="Environment" id="Environment_cuwga"]
-ambient_light_source = 2
-ambient_light_energy = 16.0
+[sub_resource type="NavigationMesh" id="NavigationMesh_5il75"]
+vertices = PackedVector3Array(-1.271327, -0.09012139, -2.9595318, 0.22867298, -0.09012139, -2.9595318, 0.22867298, -0.09012139, -6.709532, -3.271327, -0.09012139, -6.709532, -3.271327, -0.09012139, -2.9595318, -1.771327, -0.09012139, -2.9595318, -8.521327, -0.09012139, 2.5404682, 0.978673, -0.09012139, 2.5404682, -1.771327, -0.09012139, -1.9595318, -8.521327, -0.09012139, -2.2095318, -1.271327, -0.09012139, -2.4595318, 0.978673, -0.09012139, -1.9595318, -1.021327, -0.09012139, -1.9595318)
+polygons = [PackedInt32Array(2, 1, 0), PackedInt32Array(5, 4, 3), PackedInt32Array(5, 3, 0), PackedInt32Array(0, 3, 2), PackedInt32Array(9, 8, 6), PackedInt32Array(6, 8, 7), PackedInt32Array(0, 10, 5), PackedInt32Array(5, 10, 8), PackedInt32Array(12, 11, 7), PackedInt32Array(10, 12, 8), PackedInt32Array(8, 12, 7)]
+agent_height = 0.1
+agent_radius = 0.0
+agent_max_climb = 1.0
+region_min_size = 11.62
+detail_sample_distance = 4.68
+filter_walkable_low_height_spans = true
 
-[node name="Node3D" type="Node3D"]
+[sub_resource type="SphereMesh" id="SphereMesh_patrol"]
+radius = 0.3
+height = 0.6
+radial_segments = 16
+rings = 8
 
-[node name="InventoryGUI3D" parent="." instance=ExtResource("5_pk75k")]
-visible = false
+[node name="Node3D" type="Node3D" unique_id=65747858]
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-transform = Transform3D(31.0106, 0, 0, 0, 0.915855, 0, 0, 0, 31.2091, 0, 0.196568, 0)
-mesh = SubResource("BoxMesh_xii8n")
+[node name="PlayerMain" parent="." unique_id=170790671 instance=ExtResource("1_4clcr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.45457697, 0.8381944, -4.242136)
 
-[node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D"]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D/StaticBody3D"]
-shape = SubResource("ConcavePolygonShape3D_4wvfy")
-
-[node name="PlayerMain" parent="." instance=ExtResource("1_4clcr")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.274577, 0.65449464, -3.5822606)
-
-[node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(0.75419414, 0.01797964, 0.6564054, 9.313226e-10, 0.9996251, -0.027380794, -0.65665156, 0.020650433, 0.75391126, 5.7440414, 6.0253806, 8.62973)
-
-[node name="Door" parent="." instance=ExtResource("2_cuwga")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.7279331, 0.6470023, -4.9496527)
-
-[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=675793312]
 environment = SubResource("Environment_cuwga")
 
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1960603891]
 transform = Transform3D(0.90098506, 0.12621585, -0.41508493, 0.21940336, 0.69283307, 0.68690926, 0.37428343, -0.70996606, 0.5965402, 0, 7.5836267, -0.3363267)
 light_bake_mode = 1
 shadow_enabled = true
@@ -53,23 +57,110 @@ shadow_normal_bias = 4.5
 directional_shadow_mode = 0
 directional_shadow_max_distance = 56.9
 
-[node name="Doorcontrol" parent="." instance=ExtResource("3_hxww5")]
-transform = Transform3D(0.99999994, 0, 0, 0, 1, 0, 0, 0, 0.99999994, -1.0266769, 0.666509, -5.088773)
-key_id_needed = 0
+[node name="Doorcontrol" parent="." unique_id=299877790 instance=ExtResource("3_hxww5")]
+transform = Transform3D(0.99999994, 0, 0, 0, 1, 0, 0, 0, 0.99999994, -1.0266769, 0.666509, -5.428773)
+"所需钥匙ID" = -1
+"可以封门" = true
+"默认已封" = true
+"封门所需物品ID" = 0
+"木板动画速度" = 0.01
+"木板动画间隔" = 0.005
 
-[node name="DroppableItem" parent="." instance=ExtResource("6_gjy8r")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.4250655, 1.3399799, -0.049946576)
-item_res = ExtResource("7_1hdyn")
-mesh_resource = null
-
-[node name="DroppableItem2" parent="." instance=ExtResource("6_gjy8r")]
+[node name="DroppableItem2" parent="." unique_id=1361923641 instance=ExtResource("6_gjy8r")]
 unique_name_in_owner = true
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.402235, 1.3399799, 2.4249303)
-item_res = ExtResource("8_1hdyn")
-mesh_resource = null
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.662235, 1.3399799, -0.71506953)
+"物品资源" = ExtResource("5_typn3")
 
-[node name="DroppableItem3" parent="." instance=ExtResource("6_gjy8r")]
+[node name="DroppableItem4" parent="." unique_id=303982576 instance=ExtResource("6_gjy8r")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.0032415, 1.1799598, -1.5133107)
+
+[node name="DroppableItem3" parent="." unique_id=954274076 instance=ExtResource("6_gjy8r")]
 unique_name_in_owner = true
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.34677505, 1.3399799, 0.9083445)
-item_res = ExtResource("8_k2ww6")
-mesh_resource = null
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.861621, 1.3399799, -1.6216555)
+"物品资源" = ExtResource("5_k2ww6")
+
+[node name="Cellwall" parent="." unique_id=1015682075 instance=ExtResource("9_typn3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.74, 0.65, -0.44110054)
+
+[node name="Cellwall2" parent="." unique_id=992949490 instance=ExtResource("9_typn3")]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, -5.45, 0.67999995, -4.9511)
+
+[node name="OmniLight3D" type="OmniLight3D" parent="." unique_id=132476558]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.67, -2.3799999)
+
+[node name="Doorcontrol2" parent="." unique_id=1386639623 instance=ExtResource("3_hxww5")]
+transform = Transform3D(0.99999994, 0, 0, 0, 1, 0, 0, 0, 0.99999994, -4.9566765, 0.656509, 1.0458893)
+"可以封门" = true
+"封门所需物品ID" = 0
+"门总耐久度" = 6
+"门颜色" = Color(0.10199075, 0.15597534, 0.24148202, 1)
+"门框颜色" = Color(0.45979172, 0.33157966, 0.29724148, 1)
+
+[node name="Fuzi" parent="." unique_id=950960297 instance=ExtResource("15_807so")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.4599998, 1.1399999, 0.034512997)
+
+[node name="CRTFilter" parent="." unique_id=1775632591 instance=ExtResource("16_crt")]
+
+[node name="MobA" parent="." unique_id=1969862764 instance=ExtResource("13_5il75")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.1895645, 0.83960974, -2.003334)
+chase_duration = 4.0
+
+[node name="Cell" parent="." unique_id=852334828 instance=ExtResource("10_x23tg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.73, 1.15, -2.71)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=46932401]
+transform = Transform3D(31.0106, 0, 0, 0, 0.915855, 0, 0, 0, 31.2091, 0, 0.17656797, 0)
+mesh = SubResource("BoxMesh_xii8n")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D" unique_id=1644611052]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D/StaticBody3D" unique_id=1508424264]
+shape = SubResource("ConcavePolygonShape3D_4wvfy")
+
+[node name="NavigationRegion3D备份" type="Node3D" parent="." unique_id=1445613278]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.7199998, -0.3498236, -2.9299998)
+
+[node name="Door" parent="NavigationRegion3D备份" unique_id=2095182305 instance=ExtResource("2_cuwga")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.447933, 1.0468259, -1.9996529)
+
+[node name="内室2" parent="NavigationRegion3D备份" unique_id=304762779 instance=ExtResource("11_5il75")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.4699998, 1.0089774, -2.3231869)
+
+[node name="Ground" parent="NavigationRegion3D备份" unique_id=1444631244 instance=ExtResource("9_x23tg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.4699998, 1.1098235, 0.42999983)
+
+[node name="Ground2" parent="NavigationRegion3D备份" unique_id=391487060 instance=ExtResource("9_x23tg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.1799994, 1.1098235, 0.42999983)
+
+[node name="NavigationRegion3D" type="NavigationRegion3D" parent="." unique_id=1394616056]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.7199998, 0.84258294, -2.9299998)
+navigation_mesh = SubResource("NavigationMesh_5il75")
+
+[node name="PatrolPoints" type="Node3D" parent="." unique_id=1842552706]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.59, 0.98999995, -2.54)
+
+[node name="Point1" type="Node3D" parent="PatrolPoints" unique_id=1393920038]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.11, 0, 0)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="PatrolPoints/Point1" unique_id=933896323]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.1504519, 0, 0)
+mesh = SubResource("SphereMesh_patrol")
+
+[node name="Point2" type="Node3D" parent="PatrolPoints" unique_id=1063564800]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.2799997, 0, 0)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="PatrolPoints/Point2" unique_id=74164439]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.26322937, 0, 0)
+mesh = SubResource("SphereMesh_patrol")
+
+[node name="Point3" type="Node3D" parent="PatrolPoints" unique_id=374354647]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.7599578, 0, -6.282873)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="PatrolPoints/Point3" unique_id=671729502]
+mesh = SubResource("SphereMesh_patrol")
+
+[node name="DroppableItem5" parent="." unique_id=732134685 instance=ExtResource("6_gjy8r")]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.662235, 1.3399799, -2.1976807)
+"物品资源" = ExtResource("14_o4qw0")
+"模型资源" = null

@@ -1,0 +1,68 @@
+[gd_scene load_steps=8 format=3 uid="uid://cte7ysweup25u"]
+
+[ext_resource type="Texture2D" uid="uid://cwoposdr8guss" path="res://assets/world/hotel/cellwall/侧墙_0.jpg" id="1_jkalm"]
+[ext_resource type="Texture2D" uid="uid://d05o3pvj5tcpr" path="res://assets/world/hotel/cellwall/侧墙_1.jpg" id="2_m4kon"]
+[ext_resource type="Texture2D" uid="uid://b3uru531u6fdk" path="res://assets/world/hotel/cellwall/侧墙_2.jpg" id="3_nb752"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ndc14"]
+resource_name = "Framed_Wallpaper_ufsnadydy"
+albedo_color = Color(0.9063318, 0.9063318, 0.9063318, 1)
+albedo_texture = ExtResource("1_jkalm")
+metallic = 1.0
+metallic_texture = ExtResource("2_m4kon")
+metallic_texture_channel = 2
+roughness_texture = ExtResource("2_m4kon")
+roughness_texture_channel = 1
+emission_enabled = true
+emission_energy_multiplier = 0.57
+normal_enabled = true
+normal_scale = -1.0
+normal_texture = ExtResource("3_nb752")
+texture_filter = 1
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_gh2r3"]
+_surfaces = [{
+"aabb": AABB(-2.3573134, -0.81, -0.11670528, 4.714627, 1.62, 1e-05),
+"format": 34896613377,
+"index_count": 6,
+"index_data": PackedByteArray(0, 0, 1, 0, 2, 0, 2, 0, 1, 0, 3, 0),
+"name": "Framed_Wallpaper_ufsnadydy",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 4,
+"vertex_data": PackedByteArray(0, 0, 255, 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 255, 255, 255, 255, 0, 0, 0, 0, 255, 255, 0, 0, 0, 0, 0, 0)
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_bvecb"]
+resource_name = "侧墙_侧墙"
+_surfaces = [{
+"aabb": AABB(-2.3573134, -0.81, -0.11670528, 4.714627, 1.62, 1e-05),
+"attribute_data": PackedByteArray(255, 127, 255, 127, 255, 127, 255, 255, 255, 255, 255, 127, 255, 255, 255, 255),
+"format": 34896613399,
+"index_count": 6,
+"index_data": PackedByteArray(0, 0, 1, 0, 2, 0, 2, 0, 1, 0, 3, 0),
+"material": SubResource("StandardMaterial3D_ndc14"),
+"name": "Framed_Wallpaper_ufsnadydy",
+"primitive": 3,
+"uv_scale": Vector4(14.016501, 2, 0, 0),
+"vertex_count": 4,
+"vertex_data": PackedByteArray(0, 0, 255, 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 255, 255, 255, 255, 0, 0, 0, 0, 255, 255, 0, 0, 0, 0, 0, 0, 255, 255, 255, 127, 255, 255, 255, 127, 255, 255, 255, 127, 255, 255, 255, 127)
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_gh2r3")
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_jkalm"]
+points = PackedVector3Array(2.3573134, 0.81, -0.11670528, 2.3573134, -0.81, -0.11670528, -2.3573134, 0.81, -0.11670528, -2.3573134, -0.81, -0.11670528)
+
+[node name="Cellwall" type="Node3D"]
+
+[node name="侧墙" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.825, 0.11540604)
+mesh = SubResource("ArrayMesh_bvecb")
+skeleton = NodePath("")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="侧墙"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="侧墙/StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_jkalm")

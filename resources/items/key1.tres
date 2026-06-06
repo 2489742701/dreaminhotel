@@ -2,11 +2,14 @@
 
 [ext_resource type="Script" uid="uid://bbvoofg1yra28" path="res://scripts/items/Item.gd" id="1_uath0"]
 
-[sub_resource type="BoxMesh" id="BoxMesh_uath0"]
+[sub_resource type="BoxMesh" id="BoxMesh_jfi5u"]
 
 [resource]
 script = ExtResource("1_uath0")
-name_tr_key = "一把钥匙"
-desc_tr_key = "可以打开档案室"
-mesh = SubResource("BoxMesh_uath0")
-key_id = 1
+"物品类型" = 0
+"名称翻译键" = "钥匙"
+"描述翻译键" = "一把神秘的钥匙，可以打开某些门"
+"模型" = SubResource("BoxMesh_jfi5u")
+"钥匙ID" = 1
+"图标颜色" = Color(1, 0.843137, 0, 1)
+metadata/_custom_type_script = "uid://bbvoofg1yra28"

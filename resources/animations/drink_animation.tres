@@ -1,0 +1,6 @@
+[gd_resource type="Resource" script_class="AnimDrink" load_steps=2 format=3 uid="uid://dxdw52ma8gpvd"]
+
+[ext_resource type="Script" uid="uid://ckty1jxhe32qn" path="res://scripts/characters/animations/AnimDrink.gd" id="1_drink"]
+
+[resource]
+script = ExtResource("1_drink")

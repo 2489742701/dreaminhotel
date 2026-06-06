@@ -1,0 +1,156 @@
+[gd_scene load_steps=14 format=4 uid="uid://o3x3kofum8u1"]
+
+[ext_resource type="Texture2D" uid="uid://ctcdxscs3ggj" path="res://assets/world/Tools/FUzi/斧子_0.jpg" id="1_5mpoq"]
+[ext_resource type="Texture2D" uid="uid://b44dl7lpe32ty" path="res://assets/world/Tools/FUzi/斧子_1.jpg" id="2_kyaxt"]
+[ext_resource type="Texture2D" uid="uid://c3hw44fnqa3vw" path="res://assets/world/Tools/FUzi/斧子_2.jpg" id="3_p5fon"]
+[ext_resource type="ArrayMesh" uid="uid://rpoyeeyh6hyu" path="res://scenes/items/Tools/Fuzi.tres" id="4_kyaxt"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0cby8"]
+resource_name = "材质.4"
+cull_mode = 2
+albedo_color = Color(0.9063318, 0.9063318, 0.9063318, 1)
+metallic = 1.0
+roughness = 0.32
+emission_enabled = true
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_cjmky"]
+_surfaces = [{
+"aabb": AABB(-0.035410814, -0.010879189, -0.0055027856, 0.08961557, 0.09471204, 0.011005571),
+"format": 34896613377,
+"index_count": 54,
+"index_data": PackedByteArray("AAADAAgACAADAAkABAAJAAMACAAKAAAAAAAKAAYABgALAAQACgALAAYACwAJAAQACgAFAAsACAACAAoACgACAAUACAAJAAIACwAFAAcACwAHAAkABQACAAcAAgAJAAEACQAHAAEABwACAAEA"),
+"lods": [0.0069544367, PackedByteArray("AAABAAIAAAADAAEABAABAAMAAAACAAUAAAAFAAYABwACAAEABwABAAQABQACAAcABgAHAAQABQAHAAYA")],
+"name": "材质.4",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 12,
+"vertex_data": PackedByteArray("//8AAAAAAAAAAFCuAAAAAAAArlEAAAAA/////wAAAAD///////8AAAAArlH//wAA//8AAP//AAAAAFCu//8AABRl90AAAAAAFGUHvwAAAAAUZfdA//8AABRlB7///wAA")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_t3by5"]
+resource_name = "斧子_斧子_1-材质_4"
+_surfaces = [{
+"aabb": AABB(-0.035410814, -0.010879189, -0.0055027856, 0.08961557, 0.09471204, 0.011005571),
+"attribute_data": PackedByteArray("syL/////AAD/////syIAAAAA//8AAAAAS93//0vdAAAAAP//AAAAAEvd//9L3QAAS93//wAA//8AAAAAS90AAP////8AAP////8AAAAAAACeqP//nqgAAGBX//9gVwAAYFf//2BXAABgV///YFcAAA=="),
+"format": 34896613399,
+"index_count": 54,
+"index_data": PackedByteArray("AAADABQAFAADABUAFAAVAAIAAgAVAAEAFgAXAAYABgAXAAcAFgAEABcAFwAEAAUAGAAZAAoACgAZAAsAGAAIABkAGQAIAAkAGgAbAAwADAAbAA8AGgANABsAGwANAA4AEAARABIAEgARABMA"),
+"lods": [0.0069544367, PackedByteArray("AAABAAIAAAADAAEABAAFAAYABgAFAAcACAAJAAoACgAJAAsADAANAA4ADAAOAA8AEAARABIAEgARABMA")],
+"material": SubResource("StandardMaterial3D_0cby8"),
+"name": "材质.4",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 28,
+"vertex_data": PackedByteArray("//8AAAAAaPoAAFCuAAD//wAArlEAAP///////wAASPoAAFCu//9NwAAAUK4AAE3A////////BMH/////AAAEwQAArlH//z+BAABQrv//DIf//wAA//8uhv///////w+S//8AAAAABMEAAK5RAABNwAAArlH//03A//8AAP//BMEAAK5R////vwAArlEAAP+/AABQrv///78AAFCuAAD/vxRl90AAAP//FGUHvwAA//8UZQe////gwBRlB78AAODAFGX3QP//5IwUZQe///9pgxRl90AAAODAFGX3QP//4MAuaEEWyHXH9e+BD/4ifJwDifbpkon26ZJ28BCfdvAQn/9//3//////sViUAhUebQYQH4eP6hJ0ieoSdIkQH4eP/3////9/////f////3///4CJffb3cfbxVPFUnVTxVJ3/f/9//////1Udqo5VHaqO")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_cjmky")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_lj0ev"]
+resource_name = "材质.3"
+cull_mode = 2
+albedo_color = Color(1, 0, 0, 1)
+metallic = 1.0
+roughness = 0.32
+emission_enabled = true
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_37o6c"]
+_surfaces = [{
+"aabb": AABB(0.05420475, -0.0139981, -0.0055027856, 0.014052507, 0.10094986, 0.011005571),
+"format": 34896613377,
+"index_count": 30,
+"index_data": PackedByteArray("AAABAAIAAAACAAMAAgABAAQAAQAFAAQAAwACAAYAAgAEAAYABQADAAcABAAFAAcABwADAAYABgAEAAcA"),
+"name": "材质.3",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 8,
+"vertex_data": PackedByteArray("AADoBwAAAAAAAOgH//8AAP//AAArXgAAAAAW+AAAAAD//wAA06EAAAAAFvj//wAA/////yteAAD/////06EAAA==")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_bbrrp"]
+resource_name = "斧子_斧子_1-材质_3"
+_surfaces = [{
+"aabb": AABB(0.05420475, -0.0139981, -0.0055027856, 0.014052507, 0.10094986, 0.011005571),
+"attribute_data": PackedByteArray("S93//0vdAAD///////8AAEvd//9L3QAA////////AABL3f//S90AAP///////wAAsyL//wAA//+zIgAAAAAAAP////8AAP////8AAAAAAAA="),
+"format": 34896613399,
+"index_count": 30,
+"index_data": PackedByteArray("AAABAAIAAgABAAMABAAFAAYABgAFAAcACAAJAAoACgAJAAsADAANAA4ADgANAA8AEAARABIAEgARABMA"),
+"material": SubResource("StandardMaterial3D_lj0ev"),
+"name": "材质.3",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 20,
+"vertex_data": PackedByteArray("AADoBwAAA8AAAOgH//8hwP//AAArXsjA//8AANOha8IAAOgH//9aigAAFvj//zmJ//8AANOhP43/////06FCjgAAFvj//3vDAAAW+AAAssL/////06FAwP////8rXgfAAADoBwAAUPr//wAAK16b9AAAFvgAAE36/////yteovT//wAAK17/v///AADTof+//////yte/7//////06H/v5gfdp10H7SZ9BZRiFobMH0xhS9PPzbXBFiGUzMYRUkH7v2MnmT6r55H8RSX/OMimedyOwzydK8JbIooCwuMvw3/fwAA/38AAP9/AAD/fwAA")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_37o6c")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1bkv5"]
+resource_name = "Plywood_vdcjecc"
+cull_mode = 2
+albedo_color = Color(0.9063318, 0.9063318, 0.9063318, 1)
+albedo_texture = ExtResource("1_5mpoq")
+metallic = 1.0
+metallic_texture = ExtResource("2_kyaxt")
+metallic_texture_channel = 2
+roughness_texture = ExtResource("2_kyaxt")
+roughness_texture_channel = 1
+emission_enabled = true
+normal_enabled = true
+normal_texture = ExtResource("3_p5fon")
+texture_filter = 1
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_lcomo"]
+_surfaces = [{
+"aabb": AABB(-0.021030804, -0.14386585, -0.0039902837, 0.009215166, 0.21477804, 0.007980567),
+"format": 34896613377,
+"index_count": 72,
+"index_data": PackedByteArray("AAABAAIAAgABAAMABAAAAAIAAgADAAUABAACAAUAAwAGAAUAAQAHAAMAAwAHAAYAAAAIAAEAAQAIAAcACQAAAAQACQAIAAAACgAEAAUACgAJAAQABgALAAUACwAKAAUABwAMAAYABgAMAAsABwAIAAwACwANAAoADQAJAAoADAANAAsADQAIAAkADAAIAA0A"),
+"name": "Plywood_vdcjecc",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 14,
+"vertex_data": PackedByteArray("//8AAP9/AAD/vwAA//8AAP//////fwAA/7//////AAD/v///AAAAAP9/////fwAA/z//////AAD/PwAA//8AAP9/AAD/fwAA/78AAAAAAAD/P///AAAAAAAA////fwAAAAAAAP9/AAD/PwAAAAAAAA==")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_ovk2x"]
+resource_name = "斧子_斧子_1-Plywood_vdcjecc"
+_surfaces = [{
+"aabb": AABB(-0.021030804, -0.14386585, -0.0039902837, 0.009215166, 0.21477804, 0.007980567),
+"attribute_data": PackedByteArray("/////1TV/////wAAVNUAAFTV//+qqv//VNUAAKqqAACqqv///3///6qqAAD/fwAA/3///1VV////fwAAVVUAAFVV//+qKv//VVUAAKoqAACqKv//AAD//6oqAAAAAAAA////f/+/2O7/f/9//z/Y7v+/JhEAAP9//z8mEQAA/3//f/9//z/Y7v+/2O7/PyYR////f/+/JhE="),
+"format": 34896613399,
+"index_count": 72,
+"index_data": PackedByteArray("AAABAAIAAgABAAMABAAFAAYABgAFAAcACAAJAAoACgAJAAsADAANAA4ADgANAA8AEAARABIAEgARABMAFAAVABYAFgAVABcAGAAZABoAGQAbABoAHAAYABoAGwAdABoAHgAcABoAHQAeABoAHwAgACEAIQAgACIAIwAgAB8AIgAgACQAJQAgACMAJAAgACUA"),
+"material": SubResource("StandardMaterial3D_1bkv5"),
+"name": "Plywood_vdcjecc",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 38,
+"vertex_data": PackedByteArray("//8AAP9/qar/vwAA//+pqv//////f6mq/7//////qar/vwAA//8AgP8/AAD//wCA/7//////AID/P/////8AgP8/AAD//6qqAAAAAP9/qqr/P/////+qqgAA////f6qqAAAAAP9/VNX/PwAAAABU1QAA////f1TV/z///wAAVNX/PwAAAAD///+/AAAAAP///z///wAA////v///AAD///+/AAAAAFTV//8AAP9/VNX/v///AABU1f//////f1TV//////9//7//v///////v/9/////f/+//z///////7//v///AAD/vwAA////f/+//z///wAA/7///wAA/3////9/AAD/f////78AAP//////PwAA//////+/AAAAAP//AAAAAP9/////PwAAAAD///9/AAD/fwAA/38AAP9/AAD/f////3////9/////f////3////9/////f////3////9/////f////3////9/////f////3////9/////f////38AAP9/AAD/fwAA/38AAP///3////9/////f////3////9/////f////3//f/8//3//P/9//z//f/8//3//P/9//z//f/8/")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_lcomo")
+
+[node name="Fuzi" type="Node3D"]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, -0.049999997, 0)
+
+[node name="斧子_1-材质_4" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.049999997, 0.11, -0.089999996)
+mesh = SubResource("ArrayMesh_t3by5")
+skeleton = NodePath("")
+
+[node name="斧子_1-材质_3" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.049999997, 0.11, -0.089999996)
+mesh = SubResource("ArrayMesh_bbrrp")
+skeleton = NodePath("")
+
+[node name="斧子_1-Plywood_vdcjecc" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.049999997, 0.11, -0.089999996)
+mesh = SubResource("ArrayMesh_ovk2x")
+skeleton = NodePath("")
+
+[node name="斧子_1-材质_5" type="MeshInstance3D" parent="."]
+mesh = ExtResource("4_kyaxt")
