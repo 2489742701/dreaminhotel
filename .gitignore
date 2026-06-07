@@ -15,3 +15,27 @@
 # OS files
 Thumbs.db
 .DS_Store
+
+# Large binary files - only push code, not models/assets
+*.fbx
+*.gltf
+*.glb
+*.obj
+*.dae
+*.res
+*.uid
+*.import
+*.png
+*.jpg
+*.jpeg
+*.bmp
+*.tga
+*.svg
+*.webp
+*.wav
+*.ogg
+*.mp3
+*.flac
+*.zip
+*.7z
+*.rar
